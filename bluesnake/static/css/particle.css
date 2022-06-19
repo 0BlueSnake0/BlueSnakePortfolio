@@ -1,0 +1,55 @@
+:root {  
+    --movement: 100vw; 
+}
+
+
+@keyframes particleMoveLeft {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(calc(-1*var(--movement)));opacity: 0.0;}
+}
+@keyframes particleMoveRight {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(var(--movement));opacity: 0.0;} 
+}
+@keyframes particleMoveTop {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateY(calc(-1*var(--movement)));opacity: 0.0;}  
+}
+@keyframes particleMoveBottom {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateY(var(--movement));opacity: 0.0;}  
+}
+
+@keyframes particleMoveLeftTop {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(calc(-1*var(--movement))) translateY(calc(-1*var(--movement)));opacity: 0.0;}
+}
+@keyframes particleMoveRightTop {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(var(--movement)) translateY(calc(-1*var(--movement)));opacity: 0.0;} 
+}
+@keyframes particleMoveLeftBottom {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(calc(-1*var(--movement))) translateY(var(--movement));opacity: 0.0;}
+}
+@keyframes particleMoveRightBottom {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(var(--movement)) translateY(var(--movement));opacity: 0.0;} 
+}
+
+.particle {   
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+    animation-name: particleMoveLeft; 
+    position: absolute;
+    left:50%; 
+    z-index:1;
+} 

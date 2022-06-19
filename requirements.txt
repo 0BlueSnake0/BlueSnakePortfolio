@@ -1,0 +1,6 @@
+pip
+django
+django-ckeditor
+Pillow
+django-richtextfield
+python-decouple

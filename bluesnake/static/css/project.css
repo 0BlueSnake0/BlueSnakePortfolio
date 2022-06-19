@@ -1,0 +1,49 @@
+.project {
+    margin:0.5em;
+    padding-left:2em;
+    padding-right:2em;
+    padding-bottom:2em; 
+    padding-top:1em; 
+    width:40%; 
+    height:10em;
+    border-radius: 0.75em;
+    background-color: rgba(100, 149, 237, 0.4);
+    cursor:pointer;
+    display:flex;
+    flex-direction: column; 
+    justify-content:center;
+}
+
+
+.project:hover {
+    background-color: rgba(100, 149, 237, 0.7);
+}
+
+
+.project h4 {
+    color:#101430;  
+    font-size:1.5em;
+    font-weight: 800;
+    text-align: center; 
+}
+
+
+.project-title { 
+    color:black;
+    font-weight:800;
+    height:2em;
+}
+
+.project-picture {
+    width: 50%;
+    height:50%;
+}
+
+
+.project-description {  
+    color:#535561;  
+    font-size:1em;
+    font-weight: 600;
+    text-align:center;
+    bottom:0;
+}
