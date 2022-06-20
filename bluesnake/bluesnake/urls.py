@@ -5,8 +5,9 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path("portfolio", include("portfolio.urls"), name="portfolio"),
-    path('admin/', admin.site.urls),
+    path("", include("portfolio.urls"), name="portfolio"),
+    path('admin/', admin.site.urls), 
+    path('ckeditor/', include('ckeditor_uploader.urls'))
 ]
 
 

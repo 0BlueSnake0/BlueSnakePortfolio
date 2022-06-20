@@ -4,3 +4,4 @@ django-ckeditor
 Pillow
 django-richtextfield
 python-decouple
+django-phonenumber-field[phonenumbers]

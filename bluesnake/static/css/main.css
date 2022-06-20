@@ -40,7 +40,6 @@ body::-webkit-scrollbar {
     left:10%;right:10%;
     padding:10%;
     overflow-wrap: break-word;
-    text-align: center; 
 }
 
 a {
@@ -62,9 +61,11 @@ a {
 .content-block p { 
     color:#6e7186; 
     font-size:1.5em;
+    margin:2em;
 }
 .content-block h1 {  
     font-size:3em;
+    text-align: center; 
 }
 
 

@@ -1,9 +1,10 @@
 from pathlib import Path
 from decouple import config
+import django
  
 BASE_DIR = Path(__file__).resolve().parent.parent
  
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY') 
   
 DEBUG = True
 
@@ -24,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles', 
     'portfolio',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -92,17 +94,48 @@ AUTH_PASSWORD_VALIDATORS = [
  
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'Europe/Moscow'
-
 USE_I18N = True
-
 USE_TZ = False
 
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        "skin": "moono-lisa",
+        "toolbar_Basic": [["Source", "-", "Bold", "Italic"]],
+        "toolbar_Full": [
+            [
+                "Styles",
+                "Format",
+                "Bold",
+                "Italic",
+                "Underline",
+                "Strike",
+                "SpellChecker",
+                "Undo",
+                "Redo",
+            ],
+            ["Link", "Unlink", "Anchor"],
+            ["Image", "Flash", "Table", "HorizontalRule"],
+            ["TextColor", "BGColor"],
+            ["Smiley", "SpecialChar"],
+            ["Source"],
+
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ],
+        "height": '50%',
+        "width": '100%',
+        "filebrowserWindowWidth": 940,
+        "filebrowserWindowHeight": 725,
+    },
+}
  
 
 STATIC_URL = '/static/' 
-
 STATICFILES_DIRS = [
     f'{BASE_DIR}/static'
 ]
@@ -110,5 +143,9 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = f'{BASE_DIR}/media'
  
+DATE_INPUT_FORMATS = [
+    "%d.%m.%y",
+    "%d.%M.%Y",
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

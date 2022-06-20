@@ -1,7 +1,7 @@
 <html>
 {% load static %}
 <head> 
-    <title>Konstantin Maskov</title>
+    <title>{{currentProfile.firstname}}{{currentProfile.lastname}}</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/particle.css' %}">
     <link rel="stylesheet" href="{% static 'css/project.css' %}">
@@ -17,7 +17,7 @@
         <div class="content-block">
             <h1>About me</h1>
             <p>
-                Main text
+                {{ currentProfile.about|safe }}
             </p>
         </div>
         <div class="content-block">
