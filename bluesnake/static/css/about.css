@@ -1,18 +1,3 @@
-.skill-container {}
-
-.skill-line { 
-    margin:2em;
-}
-
-.skill-line p {
-    color:#32364e;   
-    font-weight: 800;
-    text-align: center;
-}
-
-
-.skill-container img {
-    width:7em;
-    height:7em;
-    margin:1em;
+.about-slide {
+    display:flex;
 }

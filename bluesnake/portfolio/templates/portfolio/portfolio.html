@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head> 
+    <title>{{currentProfile.firstname}}{{currentProfile.lastname}}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slideshow.css' %}">
+    <link rel="stylesheet" href="{% static 'css/particle.css' %}"> 
+
+    <link rel="stylesheet" href="{% static 'css/hello.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/about.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/skills.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
+    <link rel="stylesheet" href="{% static 'css/expirience.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+    <script src="{% static 'js/jquery.min.js' %}"></script> 
+</head>
+
+<body>
+    
+<div id="background"></div>   
+<div class="slideshow">
+    <div style="display:flex;justify-content:center;height:15%;">
+        <nav></nav>
+    </div>
+    <div style="display:block;">
+        <div class="left-side"></div>
+        <div class="arrow-area left-arrow-area"><div><span></span></div></div>
+        <div class="content-zone"> 
+            {% include "portfolio/hello.html" %} 
+            {% include 'portfolio/about.html'         %} 
+            {% include 'portfolio/skills.html'        %}  
+            {% include 'portfolio/projects.html'      %} 
+            {% include 'portfolio/expirience.html'    %} 
+            {% include 'portfolio/contact.html'       %} 
+        </div>
+        <div class="arrow-area right-arrow-area"><div><span></span></div></div>
+        <div class="right-side"></div>
+    </div>
+    <div style="display:flex;justify-content: center;align-items: center;cursor:pointer;">
+        <span class="slideshow-progressbar"></span>
+        <span class="slideshow-percentage"></span>
+    </div>
+</div> 
+
+
+<script src="{% static 'js/slideshow.js' %}"></script> 
+<script>
+    $("#background").css("height", $(document).height());
+</script>
+<script type="text/javascript" src="{% static 'js/generator.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/particleSettings.js' %}"></script>
+<script>   
+    function RandomInt(border1, border2) {return Math.floor(border1 + Math.random() * (border2 - border1));} 
+ 
+    particleGenerator("background", particlesNumber*0.2, "particle", "#525dff"); 
+    particleGenerator("background", particlesNumber*0.2, "particle", "#7b76d6"); 
+    particleGenerator("background", particlesNumber*0.3, "particle", "#00a0f0"); 
+    particleGenerator("background", particlesNumber*0.3, "particle", "#ffffff");
+
+</script>
+<script type="text/javascript" src="{% static 'js/animation.js' %}"></script>
+
+</body>
+
+</html>

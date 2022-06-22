@@ -24,7 +24,7 @@ for (var i=0;i<particleSet.length;i++) {
     particleSet[i].css("width", newSize);
     particleSet[i].css("height", newSize);  
     particleSet[i].css("left", $(window).width() * RandomInt(0, 100 - newSize) / 100); 
-    particleSet[i].css("top", $(window).height()* RandomInt(0, 100 - newSize) / 100);  
+    particleSet[i].css("top", $(window).height() * RandomInt(0, 100 - newSize) / 100);  
 
     particleSet[i].css("animationName", newAnimationName);   
     particleSet[i].css("animationDuration", newDuration.toString() + "s"); 

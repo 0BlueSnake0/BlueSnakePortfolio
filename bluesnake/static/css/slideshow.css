@@ -1,0 +1,226 @@
+:root {
+    --arrow-size:2em;
+    --slideshow-width:100%;
+    --slideshow-height:90%;
+    --slideshow-item-width:65%;
+    --slideshow-item-height:75%;
+    --slides:6;
+    --progress-bar-width:40%;
+    --progress-bar-height:60%;
+}
+
+
+@keyframes next-slide {
+    from { 
+        transform:translateX(100%);
+    }
+    to { 
+        transform:translateX(0%);
+    }
+}
+
+
+@keyframes prev-slide {
+    from { 
+        transform:translateX(-100%);
+    }
+    to { 
+        transform:translateX(0%);
+    }
+}
+
+
+.slideshow {  
+    width:var(--slideshow-width);
+    height:var(--slideshow-height); 
+    margin:auto; 
+    position:absolute;   
+    overflow-wrap: break-word; 
+    overflow:hidden;
+}
+
+
+.slideshow-item {
+    display:none; 
+    width: var(--slideshow-item-width);
+    height: var(--slideshow-item-height); 
+    overflow:hidden; 
+    position:relative;
+    border-radius: 2em;
+    margin-left:auto;margin-right:auto;
+    background-color: rgb(154, 96, 230, 0.15); 
+    animation-duration: 0.8s;
+} 
+
+ 
+.slideshow .left-side {
+    overflow:hidden;
+    top:0;left:0;
+    width:20%; 
+    height: 100%; 
+    display:flex;
+    align-items: center;
+    position:absolute; 
+    transform: scale(0.7) translateX(-10%);
+    opacity:0.7;
+}
+ 
+
+.slideshow .right-side {
+    overflow:hidden;
+    top:0;right:0;
+    width:20%;
+    height: 100%; 
+    display:flex;
+    align-items: center;
+    position:absolute; 
+    transform: scale(0.7) translateX(10%);
+    opacity:0.7; 
+}
+
+ 
+.slideshow .arrow-area div { 
+    margin:auto; 
+    position:absolute; 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(76, 70, 87, 0.7);
+    border-radius:50%;
+    width:calc(2*var(--arrow-size));
+    height:calc(2*var(--arrow-size)); 
+    cursor:pointer;
+    z-index:1;
+}
+
+.slideshow .arrow-area div:hover {  
+    background-color:rgba(101, 95, 112, 0.7);
+    transition:0.5s;
+    transform: scale(1.05);
+}
+
+
+.slideshow .arrow-area div:active {  
+    background-color:rgb(127, 121, 138);
+    transition:0.5s;
+    transform: scale(1.05);
+}
+
+
+
+.left-arrow-area {
+    height: 100%; 
+    width:7.5%;
+    top:0;left:10%;
+    position:absolute;  
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.left-arrow-area div span { 
+    width:var(--arrow-size);
+    height:var(--arrow-size); 
+    position:absolute;
+    border-right:4px solid white;
+    border-top:4px solid white;
+    transform: rotate(225deg);
+}
+
+
+.right-arrow-area {
+    height: 100%; 
+    width:7.5%;
+    top:0;right:10%;
+    position:absolute;  
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.right-arrow-area div span { 
+    width:var(--arrow-size);
+    height:var(--arrow-size); 
+    position:absolute;
+    border-right:4px solid white;
+    border-top:4px solid white;
+    transform: rotate(45deg);
+} 
+
+
+@keyframes grow {
+    from {width:0px;}
+    to {width:calc(100% / var(--slides));}
+}
+
+
+.slideshow-progressbar {
+    display:flex;
+    align-items: center; 
+    height:2em; 
+    padding:0.5em;
+    margin:1em;
+    width:var(--progress-bar-width);
+    background-color:rgba(101, 95, 112, 0.8);
+    border-radius:2em; 
+    margin-top:1em; 
+}
+
+
+.slideshow-progressbar div { 
+    display:none; 
+    animation-name:grow;animation-duration:1s;
+    background-color:lime;
+    width:calc(100% / var(--slides));
+    height:var(--progress-bar-height);  
+}
+
+
+.slideshow-progressbar div:first-child {
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    margin-left:1em;
+}
+
+
+.slideshow-progressbar div:last-child {
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    margin-right:1em;
+}
+
+
+span[class="slideshow-percentage"] {
+    background-color:rgba(101, 95, 112, 0.8);
+    border-radius:50%;
+    width:3em;  
+    height:3em;  
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    font-weight:bold;
+    color:rgb(44, 207, 72); 
+} 
+
+
+.slideshow nav div { 
+    width:calc(100% / var(--slides));
+    height:100%;
+    border-radius:1em;
+    background-color:rgb(27, 35, 63);
+}
+
+
+.slideshow nav {  
+    display:flex;
+    align-items: center; 
+    height:2em; 
+    padding:0.5em;
+    margin:1em;
+    width:var( --slideshow-item-width); 
+    border-radius:2em;  
+    font-family: Brandon Text,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+    font-weight: 900;
+}

@@ -1,0 +1,68 @@
+.hello-slide {  
+    overflow:hidden;
+}
+
+
+.hello-slide ul {
+    position:relative;overflow:hidden; 
+    border-radius: 3em;
+    left:10%; 
+    padding:3em; 
+}
+
+.hello-slide:hover ul {  
+    transition:1s;
+    transform: scale(1.05);
+}
+
+
+.hello-slide ul li {
+    margin:-1.5em;
+    list-style-type: none;
+    text-align:left;
+    display:block;
+    width:100%;
+    white-space: nowrap; 
+}
+
+
+.hello-slide h1 {
+    font-weight: 800;
+    font-size:100px;
+    color:white;
+    font-family: Roboto; 
+}
+
+
+.hello-slide h2 {
+    font-weight: 800;
+    font-size:50px;
+    color:white;
+    font-family: Roboto;   
+}
+
+
+.hello-slide h3 {
+    font-weight: thin;
+    font-size:30px;
+    color:rgb(143, 216, 125);
+    font-family: Courier New;
+    letter-spacing: 0.1em;  
+    font-weight: bold;
+    cursor:pointer; 
+}
+
+.hello-slide h3:hover { 
+    color:rgb(136, 253, 107); 
+}
+
+
+.hello-slide h4 {
+    font-weight: 800;
+    font-size:30px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.1em;  
+    font-weight: bold;
+    cursor:pointer; 
+}

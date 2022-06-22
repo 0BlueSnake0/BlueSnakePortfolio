@@ -2,17 +2,16 @@ from django.shortcuts import render
 from django.conf import settings
 from .models import Profile
 
+from django.core.exceptions import ObjectDoesNotExist
 
-def portfolio(request):   
-    allProfiles = Profile.objects.all()
-    currentProfile = Profile.objects.get(is_active_profile=True)
 
-    profile_data = {
-        "currentProfile":currentProfile,
-    } 
+def portfolioView(request, **kwargs):   
+    allProfiles = Profile.objects.all() 
 
     return render(
         request, 
-        template_name='portfolio.html',
-        context=profile_data
+        template_name='portfolio/portfolio.html',
+        context={
+            
+        }
     )

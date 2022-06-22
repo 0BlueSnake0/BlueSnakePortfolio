@@ -11,7 +11,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'bluesnake_engineer.ru',
     '192.168.3.5',
-    '127.0.0.1'
+    '127.0.0.1',
+    '192.168.1.68'
 ]
 
 
@@ -24,8 +25,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles', 
-    'portfolio',
+    'portfolio', 
     'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -44,8 +46,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            f'{BASE_DIR}/templates/',
-            f'{BASE_DIR}',
+            f'{BASE_DIR}/templates/', 
         ],
         'APP_DIRS': True,
         'OPTIONS': {
