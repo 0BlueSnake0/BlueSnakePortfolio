@@ -1,11 +1,11 @@
-.hello-slide {  
-    overflow:hidden;
+.hello-slide {    
 }
 
 
 .hello-slide ul {
     position:relative;overflow:hidden; 
     border-radius: 3em;
+    width:60%;
     left:10%; 
     padding:3em; 
 }
@@ -28,7 +28,7 @@
 
 .hello-slide h1 {
     font-weight: 800;
-    font-size:100px;
+    font-size:120px;
     color:white;
     font-family: Roboto; 
 }
@@ -36,7 +36,7 @@
 
 .hello-slide h2 {
     font-weight: 800;
-    font-size:50px;
+    font-size:80px;
     color:white;
     font-family: Roboto;   
 }
@@ -44,7 +44,7 @@
 
 .hello-slide h3 {
     font-weight: thin;
-    font-size:30px;
+    font-size:50px;
     color:rgb(143, 216, 125);
     font-family: Courier New;
     letter-spacing: 0.1em;  
@@ -59,7 +59,7 @@
 
 .hello-slide h4 {
     font-weight: 800;
-    font-size:30px;
+    font-size:40px;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.1em;  

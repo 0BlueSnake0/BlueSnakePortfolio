@@ -34,7 +34,7 @@ function ActivateSlide(slideshowId, slideList, slideIndex, newAnimation="", acti
 { 
     document.getElementById(slideList[slideIndex].id).style.display = "block";  
     document.getElementById(slideList[slideIndex].id + "-progressbar").style.display = "block";
-    document.getElementById(slideList[slideIndex].id).style.animationName = newAnimation;  
+    if (newAnimation != "none") document.getElementById(slideList[slideIndex].id).style.animationName = newAnimation;  
     if (checked[slideshowId] < slideList.length) checked[slideshowId]+=1;
     document.getElementById(slideshowId).getElementsByClassName("slideshow-percentage")[0].innerHTML = 
         Math.floor(100*(checked[slideshowId] /  slideList.length)).toString() + "%";  
@@ -129,6 +129,10 @@ function InitSlideshows()
 
             progressbar.appendChild(barElement);
             navigationbar.appendChild(navElement);
+            document.getElementById(navElement.id).addEventListener("click", ()=> {
+                console.log("click on ", navElement.id);
+                ActivateSlide(slideshows[slideshowIndex].id, slides, slideIndex, "none");
+            });
 
             DeactivateSlide(slideshows[slideshowIndex].id, slides, slideIndex); 
         } 

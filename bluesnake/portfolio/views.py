@@ -12,6 +12,13 @@ def portfolioView(request, **kwargs):
         request, 
         template_name='portfolio/portfolio.html',
         context={
-            
+            'slideTitles': [
+                'Hi!',
+                'About',
+                'Skills',
+                'Projects',
+                'Expirience',
+                'Contact me', 
+            ]
         }
     )
