@@ -20,7 +20,7 @@
 <body>
       
     <div class="slideshow">
-        <div style="display:flex;justify-content:center;height:10%;">
+        <div style="display:flex;justify-content:center;">
             <nav></nav> 
         </div>
         <div style="display:block;height:80%;">
@@ -59,7 +59,8 @@
     <script type="text/javascript" src="{% static 'js/particleSettings.js' %}"></script>
     <script>   
         function RandomInt(border1, border2) {return Math.floor(border1 + Math.random() * (border2 - border1));}  
-        $("#background").css("height", $(document).height()); 
+        $("#background").css("height", $(document).height());
+        $(':root').css('--slides', $("#slideshow-0 .content-zone").children().length);
         particleGenerator("background", particlesNumber*0.2, "particle", "#525dff"); 
         particleGenerator("background", particlesNumber*0.2, "particle", "#7b76d6"); 
         particleGenerator("background", particlesNumber*0.3, "particle", "#00a0f0"); 

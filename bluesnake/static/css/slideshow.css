@@ -4,7 +4,6 @@
     --slideshow-height:90%;
     --slideshow-item-width:65%;
     --slideshow-item-height:90%;
-    --slides:6;
     --progress-bar-width:40%;
     --progress-bar-height:60%;
 }
@@ -33,7 +32,7 @@
 .slideshow {  
     width:var(--slideshow-width);
     height:var(--slideshow-height);  
-    position:absolute;   
+    position:relative;   
     overflow-wrap: break-word;  
     display:block;  
     margin-bottom:auto;
@@ -215,7 +214,7 @@ span[class="slideshow-percentage"] {
     height:100%;
     border-radius:3em;  
     display:flex;align-items: center; justify-content: center;
-    font-size:30px; 
+    font-size:1.5em; 
     transition:1.5s;
     text-transform: uppercase; 
     cursor:pointer;  
@@ -228,7 +227,7 @@ span[class="slideshow-percentage"] {
     height:6em;  
     margin:1em;
     text-align: center;
-    width:var( --slideshow-item-width); 
+    width:var( --slideshow-width); 
     border-radius:3em;  
     font-family: Brandon Text,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
     font-weight: 900;
