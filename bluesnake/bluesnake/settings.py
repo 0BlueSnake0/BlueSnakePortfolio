@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles', 
-    'portfolio', 
+    'portfolio',
     'ckeditor',
     'ckeditor_uploader',
 ]
@@ -147,6 +147,8 @@ MEDIA_ROOT = f'{BASE_DIR}/media'
 DATE_INPUT_FORMATS = [
     "%d.%m.%y",
     "%d.%M.%Y",
+    "%d/%m/%y",
+    "%d/%M/%Y",
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

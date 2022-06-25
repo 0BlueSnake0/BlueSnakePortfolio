@@ -6,6 +6,7 @@
     --slideshow-item-height:90%;
     --progress-bar-width:40%;
     --progress-bar-height:60%;
+    --navigation-bar-width:80%;
 }
 
 
@@ -31,7 +32,7 @@
 
 .slideshow {  
     width:var(--slideshow-width);
-    height:var(--slideshow-height);  
+    height:var(--slideshow-height);
     position:relative;   
     overflow-wrap: break-word;  
     display:block;  
@@ -39,7 +40,8 @@
 }
 
 
-.slideshow .content-zone {  
+.slideshow .content-zone {
+    display:flex;
     height:100%;
 }
 
@@ -47,14 +49,19 @@
 .slideshow-item {
     display:none; 
     width: var(--slideshow-item-width);
-    height: var(--slideshow-item-height); 
-    overflow:hidden; 
+    height: var(--slideshow-item-height);
+    overflow:hidden;
     position:relative;
     border-radius: 2em; 
     margin-left:auto;margin-right:auto;
     background-color: rgb(154, 96, 230, 0.15); 
     animation-duration: 0.8s; 
 } 
+
+.content-zone .hello-slide ul li {
+    animation-name:hello-title;
+    animation-duration:3s;
+}
 
  
 .slideshow .left-side {
@@ -68,7 +75,7 @@
     transform: scale(0.7) translateX(-10%);
     opacity:0.7;
 }
- 
+
 
 .slideshow .right-side {
     overflow:hidden;
@@ -162,7 +169,7 @@
 .slideshow-progressbar {
     display:flex;
     align-items: center; 
-    height:2em; 
+    height:2em;
     padding:0.5em;
     margin:1em;
     width:var(--progress-bar-width);
@@ -198,9 +205,10 @@
 span[class="slideshow-percentage"] {
     background-color:rgba(101, 95, 112, 0.8);
     border-radius:1.5em;
-    width:3em;  
-    height:3em;  
+    width:3em;
+    height:3em;
     display:flex;
+    margin:0.5em;
     justify-content: center;
     align-items: center; 
     font-weight:bold;
@@ -209,27 +217,46 @@ span[class="slideshow-percentage"] {
 } 
 
 
-.slideshow nav div { 
-    width:calc(100% / var(--slides));
+.slideshow nav {
+    display:flex;align-items: center; justify-content: center;
+    flex-wrap:wrap;
+    height:auto;
+    text-align: center;
+    margin-top:1em;margin-bottom:1em;
+    margin-left:auto;margin-right:auto;
+    padding:1em;
+    width:var( --navigation-bar-width);
+    border-radius:3em;
+    font-family: Brandon Text,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+    font-weight: 900;
+    background-color:rgb(27, 35, 63);
+}
+
+
+.slideshow nav div {
+    min-width:calc((100% / var(--slides))-5%);
+    max-width:calc(100% / var(--slides));
+    flex:12%;
     height:100%;
+    padding:1em;
     border-radius:3em;  
+    margin-left:0.25em;
+    margin-right:0.25em;
     display:flex;align-items: center; justify-content: center;
     font-size:1.5em; 
     transition:1.5s;
     text-transform: uppercase; 
     cursor:pointer;  
     z-index:2;
-}  
- 
+    white-space:nowrap;
+}
 
-.slideshow nav {  
-    display:flex;align-items: center; justify-content: center;
-    height:6em;  
-    margin:1em;
-    text-align: center;
-    width:var( --slideshow-width); 
-    border-radius:3em;  
-    font-family: Brandon Text,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
-    font-weight: 900;
-    background-color:rgb(27, 35, 63);
+
+.slideshow nav div:first-child {
+    margin-left:0;
+}
+
+
+.slideshow nav div:last-child {
+    margin-right:0;
 }

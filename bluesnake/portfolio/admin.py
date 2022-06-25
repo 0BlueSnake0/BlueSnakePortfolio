@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group, User
 from django.utils.safestring import mark_safe
-from .models import Image, SlideShow, Skill, SkillCategory, Profile, Project
+from .models import Image, Skill, SkillCategory, Profile, ActiveProfile, Project
 
 
 admin.site.unregister(Group)
 admin.site.unregister(User)
+admin.site.site_header = "Portfolio management"
 
 @admin.register(Image)
 class Image(admin.ModelAdmin):
@@ -21,24 +22,6 @@ class Image(admin.ModelAdmin):
         """
         return mark_safe(html)
     get_image.short_description=""
-
-
-@admin.register(SlideShow)
-class SlideShowAdmin(admin.ModelAdmin):
-    list_display = [
-        'get_first_image',
-        'title'
-    ]
-    
-    
-    def get_first_image(self, obj):
-        all_images = list(obj.images.all())
-        if len(all_images) > 0:
-            html=f"""
-                <img src="{all_images[0].file.url}" style="width:8em;height:8em;">
-            """
-        return mark_safe(html)
-    get_first_image.short_description="First image"
 
 
 @admin.register(SkillCategory)
@@ -61,7 +44,7 @@ class SkillCategoryAdmin(admin.ModelAdmin):
                     text-decoration: none;
                 }
             </style>
-            "<div style="display:flex;flex-wrap:wrap;width:18em;justify-content:center;">
+            <div style="display:flex;flex-wrap:wrap;width:18em;justify-content:center;">
         """
         
         for skill in all_skills:
@@ -106,7 +89,6 @@ class ProfileAdmin(admin.ModelAdmin):
         'get_photo', 
         'firstname', 'lastname',
         'target_vacancy',
-        'activity',
         'get_skills',
         'get_contacts'
     ]
@@ -123,16 +105,6 @@ class ProfileAdmin(admin.ModelAdmin):
             
         return mark_safe(html)
 
-    def activity(self, obj):
-        activity_image = "not-active.png"
-        if obj.is_active_profile:
-            activity_image = "active.png"
-
-        html = f"""
-            <img src="/static/images/icons/{activity_image}" style="width:3em;height:3em;border-radius:50%;">
-        """
-
-        return mark_safe(html)
 
     get_photo.short_description = "Avatar"
 
@@ -201,13 +173,22 @@ class ProfileAdmin(admin.ModelAdmin):
         
         
     def get_skills(self, obj):
-        html="""<div style="display:flex;flex-wrap:wrap;width:18em;justify-content:center;">"""
+        html = """
+            <style>
+                p {
+                    color:#144ec9;
+                    font-family:sans-serif;
+                    font-size:18px;
+                    font-weight:800;
+                    text-decoration: none;
+                }
+            </style>
+            <div style="display:flex;flex-wrap:wrap;width:18em;justify-content:center;">
+        """
         
         for skill in obj.skills.all():
             if skill.icon and skill.icon.file.url:
-                html += f"""
-                    <img src="{skill.icon.file.url}" style="margin:1em;width:4em;height:4em;"> 
-                """
+                html += f'<img src="{skill.icon.file.url}" style="margin:1em;width:4em;height:4em;">'
             else:
                 html += f"""
                     <p>{skill.title}</p> 
@@ -215,6 +196,22 @@ class ProfileAdmin(admin.ModelAdmin):
         html+= "</div>"
         return mark_safe(html)
     get_skills.short_description = "Skills"
+
+
+@admin.register(ActiveProfile)
+class ActiveProfileAdmin(admin.ModelAdmin):
+    list_display = [
+        'get_profile'
+    ]
+
+    def get_profile(self, obj):
+        html = ""
+        if (obj.profile is not None):
+            html = f'<a href="/admin/{obj._meta.app_label}/{obj._meta.model_name}/{obj.pk}/change">{obj.profile.firstname} {obj.profile.lastname}</a>'
+        return mark_safe(html)
+
+    get_profile.short_description = ""
+
 
 
 @admin.register(Project)

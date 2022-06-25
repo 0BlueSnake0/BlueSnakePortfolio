@@ -5,3 +5,4 @@ Pillow
 django-richtextfield
 python-decouple
 django-phonenumber-field[phonenumbers]
+django-solo

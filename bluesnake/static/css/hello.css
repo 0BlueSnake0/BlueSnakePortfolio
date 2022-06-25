@@ -5,26 +5,25 @@
 .hello-slide ul {
     position:relative;overflow:hidden; 
     border-radius: 3em;
-    width:60%;
-    left:10%; 
-    padding:3em; 
+    width:90%;
+    height:100%;
+    margin-left:auto;margin-right:auto;
 }
 
-.hello-slide:hover ul {  
-    transition:1s;
-    transform: scale(1.05);
+
+@keyframes hello-title {
+    from {opacity:0;transform: translateX(-50%);}
+    to {opacity:1;trasnform: translateX(0%);}
 }
 
 
 .hello-slide ul li {
-    margin:-1.5em;
     list-style-type: none;
     text-align:left;
     display:block;
     width:100%;
-    white-space: nowrap; 
+    word-wrap:break-word;
 }
-
 
 .hello-slide h1 {
     font-weight: 800;
@@ -36,7 +35,7 @@
 
 .hello-slide h2 {
     font-weight: 800;
-    font-size:4.5em;
+    font-size:3em;
     color:white;
     font-family: Roboto;   
 }
@@ -44,22 +43,23 @@
 
 .hello-slide h3 {
     font-weight: thin;
-    font-size:3em;
+    font-size:2em;
     color:rgb(143, 216, 125);
     font-family: Courier New;
-    letter-spacing: 0.1em;  
+    letter-spacing: 0.4em;
     font-weight: bold;
     cursor:pointer; 
+    text-transform: uppercase;
 }
 
 .hello-slide h3:hover { 
-    color:rgb(136, 253, 107); 
+    color:rgb(136, 253, 107);
 }
 
 
 .hello-slide h4 {
     font-weight: 800;
-    font-size:3em;
+    font-size:2em;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.1em;  

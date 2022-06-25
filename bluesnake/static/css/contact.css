@@ -1,0 +1,33 @@
+ul[class="contact-list"] {
+    position:relative;
+    margin:auto;
+    width:60%;
+    display:block;
+}
+
+
+ul[class="contact-list"] li {
+    list-style-type:none;
+    margin:1em;
+}
+
+ul[class="contact-list"] li a {
+    padding:0.5em;
+    border-radius:1em;
+    display:flex;
+    align-items:center;
+    font-size:2em;
+    font-weight:bold;
+    color:#00CC66;
+}
+
+ul[class="contact-list"] li a p {
+    margin:1em;
+}
+
+ul[class="contact-list"] li a:hover {
+    color:#00FF80;
+    transform:scale(1.05);
+    background-color: rgba(100, 149, 237, 0.1);
+}
+

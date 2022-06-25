@@ -24,7 +24,7 @@ function getNextSlideIndex(numberOfSlides, slideIndex)
 function DeactivateSlide(slideshowId, slideList, slideIndex)
 {  
     $("#" + slideList[slideIndex].id).css("display", "none");
-    $("#" + slideList[slideIndex].id + "-navigationbar").css("background-color", "rgb(27, 35, 63)");
+    $("#" + slideList[slideIndex].id + "-navigationbar").css("background-color", "transparent");
     $("#" + slideList[slideIndex].id + "-navigationbar").css("color", "white");
     activated[slideshowId][slideIndex] = false;    
 }
@@ -51,7 +51,7 @@ function ActivateSlide(slideshowId, slideList, slideIndex, newAnimation="", acti
     if (newAnimation != "") $("#" + slideList[slideIndex].id).css("animation-name", newAnimation);
     $("#" + slideshowId + " .slideshow-percentage").get(0).innerHTML = Math.floor(countPercentage(checked, slideshowId).toString()) + "%";
     $("#" + slideList[slideIndex].id + "-navigationbar").css("background-color", "white"); 
-    $("#" + slideList[slideIndex].id + "-navigationbar").css("color", "rgb(27, 35, 63)"); 
+    $("#" + slideList[slideIndex].id + "-navigationbar").css("color", "rgb(27, 35, 63)");
 
     var prevslide, nextslide;
     if (slides.length > 0 && activateleftright ) {  

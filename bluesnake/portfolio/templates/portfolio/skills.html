@@ -1,5 +1,30 @@
-<div class="skills-slide slideshow-item">
+{% load static %}
+{% load mytags %}
+
+<div class="slideshow-item">
     <div class="content-block">
         <h1 class="content-block-title">My skills</h1>
+        <div class="flex-container">
+            {% get_categories currentProfile.skills.all as categories %}
+            <div id="skills-container" class="flex-container">
+                {% for category in categories %}
+                    {% get_category_skills categories category as skills %}
+                    <div style="display:block;">
+                        <p class="category-title">{{category.title}}</p>
+                        <div class="skill-line">
+                            {% for skill in skills %}
+                                {% if skill.icon.file and skill.icon.file.url %}
+                                <label style="position:relative;">
+                                    <img class="skill-icon" src="{{skill.icon.file.url}}">
+                                    <input type="checkbox">
+                                    <span>{{skill.title}}<span>
+                                </label>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div> 
 </div>

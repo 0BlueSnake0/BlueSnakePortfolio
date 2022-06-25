@@ -1,5 +1,38 @@
+{% load static %}
 <div class="contact-slide slideshow-item">
     <div class="content-block">
         <h1 class="content-block-title">Contacts</h1>
+        <div style="display:flex;justify-content:center;align-items:center;">
+            <ul class="contact-list">
+                <li>
+                    <a target="_blank" href="tel:{{currentProfile.phone_number}}">{{currentProfile.phone_number}},</a>
+                    <a target="_blank" href="mailto:{{currentProfile.email}}">{{currentProfile.email}}</a>
+                </li>
+                {% if currentProfile.github != "" %}
+                <li>
+                    <a target="_blank" href="{{currentProfile.github}}">
+                    <img class="link-icon" src="{% static 'images/icons/github.png' %}">
+                    <p>GitHub</p>
+                    </a>
+                </li>
+                {% endif %}
+                {% if currentProfile.telegram != "" %}
+                <li>
+                    <a target="_blank" href="{{currentProfile.telegram}}">
+                    <img class="link-icon" src="{% static 'images/icons/telegram.png' %}">
+                    <p>Telegram</p>
+                    </a>
+                </li>
+                {% endif %}
+                {% if currentProfile.linkedIn != "" %}
+                <li>
+                    <a target="_blank" href="{{currentProfile.linkedIn}}">
+                    <img class="link-icon" src="{% static 'images/icons/linkedIn.png' %}">
+                    <p>LinkedIn</p>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
     </div> 
 </div>

@@ -1,12 +1,19 @@
 from django.shortcuts import render
 from django.conf import settings
-from .models import Profile
+from .models import ActiveProfile
 
 from django.core.exceptions import ObjectDoesNotExist
 
 
 def portfolioView(request, **kwargs):   
-    allProfiles = Profile.objects.all() 
+
+    try:
+        currentProfile = ActiveProfile.objects.all()[:1].get().profile
+    except ObjectDoesNotExist:
+        return render(
+            request,
+            template_name='portfolio/profile_not_found.html',
+        )
 
     return render(
         request, 
@@ -18,7 +25,8 @@ def portfolioView(request, **kwargs):
                 'Skills',
                 'Projects',
                 'Expirience',
-                'Contact me', 
-            ]
+                'Contact me'
+                ],
+            'currentProfile':currentProfile,
         }
     )
