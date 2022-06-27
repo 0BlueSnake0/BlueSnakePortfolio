@@ -4,6 +4,8 @@ from django.conf.urls.static import static
 from django.urls import path, include
 
 
+handler404 = 'portfolio.views.page_not_found'
+
 urlpatterns = [
     path("", include("portfolio.urls"), name="portfolio"),
     path('admin/', admin.site.urls), 

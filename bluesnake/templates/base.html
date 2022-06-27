@@ -11,6 +11,7 @@
 <body>
     {% block slideshow %}{% endblock %}
     {% block profile_not_found %}{% endblock %}
+    {% block page_not_found %}{% endblock %}
 
     <div id="background"></div>
     <script type="text/javascript" src="{% static 'js/generator.js' %}"></script>
@@ -18,7 +19,7 @@
     <script>
         function RandomInt(border1, border2) {return Math.floor(border1 + Math.random() * (border2 - border1));}
         $("#background").css("height", $(document).height());
-        particleGenerator("background", particlesNumber*0.5, "particle", "blue");
+        particleGenerator("background", particlesNumber*0.5, "particle", "cornflowerblue");
         particleGenerator("background", particlesNumber*0.3, "particle", "yellow");
         particleGenerator("background", particlesNumber*0.2, "particle", "lime");
     </script>
