@@ -1,5 +1,15 @@
-# Ignoring environment variables
-.env
+# Django #
+*.log
+*.pot
+*.pyc
+*.env
+__pycache__
+db.sqlite3
+media
+
+# Backup files #
+*.bak
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

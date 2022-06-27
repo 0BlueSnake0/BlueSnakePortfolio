@@ -10,9 +10,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'bluesnake_engineer.ru',
-    '192.168.3.5',
     '127.0.0.1',
-    '192.168.1.68'
+    '192.168.1.54',
 ]
 
 
