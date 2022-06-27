@@ -13,9 +13,9 @@
                         <p class="category-title">{{category.title}}</p>
                         <div class="skill-line">
                             {% for skill in skills %}
-                                {% if skill.icon.file and skill.icon.file.url %}
+                                {% if skill.icon and skill.icon.url %}
                                 <label style="position:relative;">
-                                    <img class="skill-icon" src="{{skill.icon.file.url}}">
+                                    <img class="skill-icon" src="{{skill.icon.url}}">
                                     <input type="checkbox">
                                     <span>{{skill.title}}<span>
                                 </label>

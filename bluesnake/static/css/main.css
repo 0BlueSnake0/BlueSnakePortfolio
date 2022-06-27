@@ -85,7 +85,7 @@ a {
 
 .flex-container {
     display:flex;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
     justify-content: center;
     flex-wrap: wrap;

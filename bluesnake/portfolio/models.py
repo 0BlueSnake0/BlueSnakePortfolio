@@ -8,15 +8,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 
-class Image(models.Model):
-    title = models.CharField(default='', max_length=255)
-    file = models.ImageField(default='', upload_to="images/")
-
-
-    def __str__(self):
-        return f'{self.title} - "{self.file.url}" '
-
-
 class SkillCategory(models.Model):
     title = models.CharField(default='', max_length=255)
 
@@ -27,7 +18,7 @@ class SkillCategory(models.Model):
 
 class Skill(models.Model):
     title = models.CharField(default='', max_length=255, unique=True)
-    icon = models.OneToOneField(Image, blank=True, null=True, on_delete=models.SET_NULL)
+    icon = models.ImageField(default='', upload_to="images/skill_icons/")
     category = models.ForeignKey(SkillCategory, null=True, default='', on_delete=models.CASCADE)
 
 
@@ -37,7 +28,7 @@ class Skill(models.Model):
 
 class WorkExpirience(models.Model):
     company = models.CharField(default='', max_length=255)
-    company_logo = models.ImageField(default='', upload_to="images/companies")
+    company_logo = models.ImageField(default='', upload_to="images/company_logos")
     start = models.DateField(default='01.01.2000', verbose_name="Worked from")
     end =   models.DateField(default='01.01.2004', verbose_name="Worked to")
 

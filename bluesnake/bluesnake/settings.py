@@ -6,16 +6,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
  
 SECRET_KEY = config('SECRET_KEY') 
   
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'bluesnake_engineer.ru',
-    '127.0.0.1',
-    '192.168.1.54',
+    'bluesnakeengineer.ru',
+    '127.0.0.1'
 ]
 
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -62,8 +59,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'bluesnake.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -73,8 +68,6 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
