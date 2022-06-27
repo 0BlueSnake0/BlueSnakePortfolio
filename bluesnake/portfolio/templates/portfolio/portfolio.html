@@ -46,5 +46,15 @@
     $(':root').css('--slides', $("#slideshow-0 .content-zone").children().length);
 </script>
 
+<script>
+    {% if request.user_agent.is_mobile %}
+        $("slideshow-0").css("height", "50vh");
+    {% else %}
+        $("slideshow-0").css("height", $(":root").css("--slideshow-height"));
+        $("slideshow-0 .left-side").css("height", "100%");
+        $("slideshow-0 .left-side").css("height", "100%");
+    {% endif %}
+</script>
+
 {% endblock %}
 
