@@ -28,7 +28,7 @@
     opacity:0.8;
 }
 
-@keyframes show-skill-hint {
+@keyframes show-hint {
     from {
         display:block;
         transform: translateX(-100%) translateY(100%);
@@ -65,7 +65,7 @@
 
 
 .skill-icon + input[type="checkbox"]:checked + span {
-    animation: show-skill-hint 0.5s;
+    animation: show-hint 0.5s;
     transition:2s;
     display:block;
 }

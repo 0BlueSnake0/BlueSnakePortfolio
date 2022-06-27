@@ -2,5 +2,8 @@
 <div class="experience-slide slideshow-item">
     <div class="content-block">
         <h1 class="content-block-title">Work expirience</h1>
+        {% with currentProfile.expirience.all as nodeList %}
+            {% include 'graph.html' %}
+        {% endwith %}
     </div> 
 </div>

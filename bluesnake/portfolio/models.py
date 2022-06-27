@@ -35,6 +35,17 @@ class Skill(models.Model):
         return f'{self.title}'
 
 
+class WorkExpirience(models.Model):
+    company = models.CharField(default='', max_length=255)
+    company_logo = models.ImageField(default='', upload_to="images/companies")
+    start = models.DateField(default='01.01.2000', verbose_name="Worked from")
+    end =   models.DateField(default='01.01.2004', verbose_name="Worked to")
+
+    def __str__(self):
+        return f'{self.company}'
+
+
+
 class Profile(models.Model):
     firstname = models.CharField(default='', max_length=255)
     lastname = models.CharField(default='', max_length=255)
@@ -51,6 +62,7 @@ class Profile(models.Model):
 
     about = RichTextField(default='', blank=True)
     skills = models.ManyToManyField(Skill, blank=True)
+    expirience = models.ManyToManyField(WorkExpirience, blank=True)
 
     def __str__(self):
         return f'{self.firstname} {self.lastname}'

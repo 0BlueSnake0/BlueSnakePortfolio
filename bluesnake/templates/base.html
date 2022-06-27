@@ -14,16 +14,15 @@
 
     <div id="background"></div>
     <script type="text/javascript" src="{% static 'js/generator.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/particleSettings.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/particle_settings.js' %}"></script>
     <script>
         function RandomInt(border1, border2) {return Math.floor(border1 + Math.random() * (border2 - border1));}
         $("#background").css("height", $(document).height());
-        particleGenerator("background", particlesNumber*0.2, "particle", "#525dff");
-        particleGenerator("background", particlesNumber*0.2, "particle", "#7b76d6");
-        particleGenerator("background", particlesNumber*0.3, "particle", "#00a0f0");
-        particleGenerator("background", particlesNumber*0.3, "particle", "#ffffff");
+        particleGenerator("background", particlesNumber*0.5, "particle", "blue");
+        particleGenerator("background", particlesNumber*0.3, "particle", "yellow");
+        particleGenerator("background", particlesNumber*0.2, "particle", "lime");
     </script>
-    <script type="text/javascript" src="{% static 'js/animation.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/particle_animation.js' %}"></script>
 
 </body>
 

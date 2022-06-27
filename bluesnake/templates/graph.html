@@ -1,0 +1,40 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/graph.css' %}">
+<div id="random-graph-field">
+    <div id="graph"></div>
+
+</div>
+<script>
+    var index=0;
+    {% for Node in nodeList %}
+        var newNode = document.createElement("div");
+        newNode.classList.add("node");
+        newNode.innerHTML = '<img src="{{Node.company_logo.url}}">';
+        newNode.id = "node-" + index.toString();
+
+        var shortInfo = document.createElement("span");
+        shortInfo.innerHTML =
+            '<h1>{{Node.company}}</h1><p>{{Node.start}} - {{Node.end}}</p><img style="width:90%;" src="{{Node.company_logo.url}}">';
+        newNode.appendChild(shortInfo);
+        document.getElementById("graph").appendChild(newNode); index++;
+    {% endfor %}
+
+    var additionalNodes=5;
+    for (var i=0;i<additionalNodes;i++) {
+        var newNode = document.createElement("div");
+        newNode.classList.add("node");
+        newNode.innerHTML = "?";
+        newNode.id = "node-" + index.toString();
+
+        var shortInfo = document.createElement("span");
+        shortInfo.innerHTML = "<h1>Maybe your company will be here?</h1>";
+        newNode.appendChild(shortInfo);
+        document.getElementById("graph").appendChild(newNode); index++;
+    }
+</script>
+
+<script type="text/javascript" src="{% static 'js/graph_settings.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/graph_utils.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/construct_graph.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/graph_animation.js' %}"></script>
+

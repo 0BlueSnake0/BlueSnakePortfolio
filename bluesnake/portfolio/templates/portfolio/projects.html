@@ -7,15 +7,15 @@
             {% get_projects currentProfile as projects %}
             {% for project in projects %}
                 <div class="project">
-                    <h4 class="project-title">{{project.name}}</h4>
+                    <h4>{{project.name}}</h4>
                     <div style="display:block;">
                         {% if project.preview and project.preview.url %}
                         <img class="project-preview" src="{{project.preview.url}}">
                         {% endif %}
                         <div>
                             <a class="github-link" href="{{project.github}}" target="_blank">
-                            <img class="link-icon" src="{% static 'images/icons/github.png' %}">
-                            <h3>View github</h3>
+                                <img class="link-icon" src="{% static 'images/icons/github.png' %}">
+                                <h3 style="font-size:1.5vw;position:relative;">View github</h3>
                             </a>
                         </div>
                         <p>{{project.description}}</p>

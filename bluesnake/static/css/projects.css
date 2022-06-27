@@ -21,24 +21,18 @@
 
 
 .project h4 {
-    color:#101430;  
-    font-size:1.5em;
-    font-weight: 800;
-    text-align: center; 
-    margin:0em;
-}
-
-
-.project-title { 
+    font-size:2vw;
     color:black;
     font-weight:800;
-    height:2em;
+    height:10%;
 }
 
+
 .project-preview {
-    width: 90%;
+    width: 100%;
     height:auto;
     border-radius:1em;
+    position:relative;
 }
 
 
@@ -57,7 +51,8 @@
     padding-left:1em;padding-right:1em;
     background-color: rgba(100, 149, 237, 0.2);
     border-radius:2em;
-    margin:1em;
+    width:auto;
+    position:relative;
 }
 
 

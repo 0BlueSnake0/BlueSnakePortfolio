@@ -1,15 +1,16 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group, User
 from django.utils.safestring import mark_safe
-from .models import Image, Skill, SkillCategory, Profile, ActiveProfile, Project
+from .models import Image, Skill, SkillCategory, Profile, ActiveProfile, Project, WorkExpirience
 
 
 admin.site.unregister(Group)
 admin.site.unregister(User)
 admin.site.site_header = "Portfolio management"
 
+
 @admin.register(Image)
-class Image(admin.ModelAdmin):
+class ImageAdmin(admin.ModelAdmin):
     list_display = [
         'get_image',
         'title',
@@ -82,6 +83,22 @@ class SkillAdmin(admin.ModelAdmin):
     get_icon.short_description = "Icon"
 
 
+@admin.register(WorkExpirience)
+class WorkExpirienceAdmin(admin.ModelAdmin):
+    list_display = [
+        'company',
+        'get_company_logo',
+        'start',
+        'end',
+    ]
+
+    def get_company_logo(self, obj):
+        html=f"""
+            <img src="{obj.company_logo.url}" style="width:16em;">
+        """
+        return mark_safe(html)
+    get_company_logo.short_description="Company logo"
+
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
@@ -90,6 +107,7 @@ class ProfileAdmin(admin.ModelAdmin):
         'firstname', 'lastname',
         'target_vacancy',
         'get_skills',
+        'get_work_experience',
         'get_contacts'
     ]
 
@@ -196,6 +214,27 @@ class ProfileAdmin(admin.ModelAdmin):
         html+= "</div>"
         return mark_safe(html)
     get_skills.short_description = "Skills"
+
+
+    def get_work_experience(self, obj):
+        html = """
+            <style>
+                p {
+                    color:#144ec9;
+                    font-family:sans-serif;
+                    font-size:18px;
+                    font-weight:800;
+                    text-decoration: none;
+                }
+            </style>
+            <div style="display:flex;flex-direction:column;width:18em;justify-content:center;">
+        """
+
+        for exp in obj.expirience.all():
+            html += f'<img src="{exp.company_logo.url}" style="margin:1em;width:10em;">'
+        html+= "</div>"
+        return mark_safe(html)
+    get_work_experience.short_description = "Work expirience"
 
 
 @admin.register(ActiveProfile)

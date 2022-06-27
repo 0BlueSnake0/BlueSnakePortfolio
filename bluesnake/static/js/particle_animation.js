@@ -1,10 +1,10 @@
 var newSize, newDuration, newAnimationName; 
 
 
-function changeAnimation() {  
+function changeParticleAnimation() {
     newSize = RandomInt(leftSizeBorder, rightSizeBorder);
-    newDuration = RandomInt(leftDurationBorder, rightDurationBorder);
-    newAnimationName = animations[Math.floor(Math.random() * animations.length)]; 
+    newDuration = RandomInt(leftParticleDurationBorder, rightParticleDurationBorder);
+    newAnimationName = particleAnimations[Math.floor(Math.random() * particleAnimations.length)];
 
     $(this).css("width", newSize);
     $(this).css("height", newSize); 
@@ -18,8 +18,8 @@ function changeAnimation() {
 
 for (var i=0;i<particleSet.length;i++) {
     newSize = RandomInt(leftSizeBorder, rightSizeBorder);
-    newDuration = RandomInt(leftDurationBorder, rightDurationBorder); 
-    newAnimationName = animations[Math.floor(Math.random() * animations.length)]
+    newDuration = RandomInt(leftParticleDurationBorder, rightParticleDurationBorder);
+    newAnimationName = particleAnimations[Math.floor(Math.random() * particleAnimations.length)]
 
     particleSet[i].css("width", newSize);
     particleSet[i].css("height", newSize);  
@@ -29,5 +29,5 @@ for (var i=0;i<particleSet.length;i++) {
     particleSet[i].css("animationName", newAnimationName);   
     particleSet[i].css("animationDuration", newDuration.toString() + "s"); 
 
-    particleSet[i].on('animationiteration', changeAnimation);
+    particleSet[i].on('animationiteration', changeParticleAnimation);
 }
