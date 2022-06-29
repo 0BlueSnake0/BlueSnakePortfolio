@@ -1,60 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block slideshow %}
+{% block maincontent %}
 <head>
     <title>{{currentProfile.firstname}}{{currentProfile.lastname}}</title>
-    <link rel="stylesheet" href="{% static 'css/slideshow.css' %}?v=1">
-    <link rel="stylesheet" href="{% static 'css/hello.css' %}?v=1">
     <link rel="stylesheet" href="{% static 'css/skills.css' %}?v=1">
     <link rel="stylesheet" href="{% static 'css/projects.css' %}?v=1">
     <link rel="stylesheet" href="{% static 'css/contact.css' %}?v=1">
 </head>
 
-<div class="slideshow">
-    <div style="display:block;height:auto;position:relative;">
-        <nav></nav>
-    </div>
-    <div style="display:block;height:100%;position:relative;">
-        <div class="left-side"></div>
-        <div class="arrow-area left-arrow-area"><div><span></span></div></div>
-        <div class="content-zone">
-            {% include "portfolio/hello.html"         %}
-            {% include 'portfolio/about.html'         %}
-            {% include 'portfolio/skills.html'        %}
-            {% include 'portfolio/projects.html'      %}
-            {% include 'portfolio/expirience.html'    %}
-            {% include 'portfolio/contact.html'       %}
-        </div>
-        <div class="arrow-area right-arrow-area"><div><span></span></div></div>
-        <div class="right-side"></div>
-    </div>
-    <div style="display:flex;justify-content: center;align-items: center;cursor:pointer;">
-        <span class="slideshow-progressbar"></span>
-        <span class="slideshow-percentage"></span>
-    </div>
-</div>
-
-<script type="text/javascript" src="{% static 'js/slideshow.js' %}"></script>
-<script type="text/javascript">
-    var i=0;
-    {% for title in slideTitles %}
-        document.getElementById("slideshow-0-slide-" + i.toString() + "-navigationbar").innerHTML = "{{title}}"; i++;
-    {% endfor %}
-</script>
-<script>
-    $(':root').css('--slides', $("#slideshow-0 .content-zone").children().length);
-</script>
-
-<script>
-    {% if request.user_agent.is_mobile %}
-        $("slideshow-0").css("height", "50vh");
-    {% else %}
-        $("slideshow-0").css("height", $(":root").css("--slideshow-height"));
-        $("slideshow-0 .left-side").css("height", "100%");
-        $("slideshow-0 .left-side").css("height", "100%");
-    {% endif %}
-</script>
+{% include "dropdown.html" %}
+{% include "portfolio/hello.html" %}
 
 {% endblock %}
 

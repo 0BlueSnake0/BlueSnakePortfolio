@@ -1,68 +1,105 @@
-.hello-slide {    
+@keyframes fading-appearance {
+    from {
+        opacity:0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity:1;
+        transform: translateX(0%);
+    }
 }
 
 
-.hello-slide ul {
-    position:relative;overflow:hidden; 
-    border-radius: 3em;
-    width:90%;
-    height:100%;
-    margin-left:auto;margin-right:auto;
+@keyframes appearance {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
 }
 
 
-@keyframes hello-title {
-    from {opacity:0;transform: translateX(-50%);}
-    to {opacity:1;trasnform: translateX(0%);}
+@keyframes fading {
+    from {opacity:0;}
+    to {opacity:1;}
 }
 
 
-.hello-slide ul li {
-    list-style-type: none;
-    text-align:left;
-    display:block;
-    width:100%;
+.hello-title {
+    position:relative;
+    font-family: 'BrandonText Bold';
+    font-weight:500;
+    font-size:3vw;
+    color: #344058;
+    animation:fading-appearance 2s;
+}
+
+
+#greeting {
+    top:8vw;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    padding:2vw;
+    border-radius:2vw;
+    background:rgba(153, 150, 253, 0.1);
+    animation:fading 4s;
+    overflow:hidden;
+}
+
+
+#hello {
+    position:relative;
+    width:40%;
+    z-index:1;
+}
+
+
+#hello img {
+    position:absolute;
+    width:200vw;
+    height:100vw;
+    top:0;left:50%;
+
+    background-color:rgba(73, 15, 227, 1.0);
+    transform: rotate(-45deg);
+    z-index:0;
+}
+
+
+#about {
+    position:relative;
+    font-family: 'BrandonText Medium';
+    font-weight:800;
+    font-size:1em;
     word-wrap:break-word;
-}
+    z-index:1;
+    margin-top:5vw;
 
-.hello-slide h1 {
-    font-weight: 800;
-    font-size:6em;
-    color:white;
-    font-family: Roboto; 
-}
-
-
-.hello-slide h2 {
-    font-weight: 800;
-    font-size:3em;
-    color:white;
-    font-family: Roboto;   
+    color:#B0AFCD;
+    animation:fading-appearance 2s;
 }
 
 
-.hello-slide h3 {
-    font-weight: thin;
-    font-size:2em;
-    color:rgb(143, 216, 125);
-    font-family: Courier New;
-    letter-spacing: 0.4em;
-    font-weight: bold;
-    cursor:pointer; 
-    text-transform: uppercase;
-}
-
-.hello-slide h3:hover { 
-    color:rgb(136, 253, 107);
+#contact-apps {
+    position:relative;
+    display:flex;
+    width:auto;
+    height:auto;
+    margin-left:auto;
 }
 
 
-.hello-slide h4 {
-    font-weight: 800;
-    font-size:2em;
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 0.1em;  
-    font-weight: bold;
-    cursor:pointer; 
+#contact-apps .contact-icon {
+    position:relative;
+    display:block;
+    width:4vw;
+    margin:0.5vw;
+}
+
+
+#contact-apps .contact-icon:hover {
+    opacity:0.75;
+    transform: scale(1.05);
 }

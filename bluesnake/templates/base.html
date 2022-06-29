@@ -2,17 +2,19 @@
 <html>
 {% load static %}
 <head>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}?v=1">
-    <link rel="stylesheet" href="{% static 'css/particle.css' %}?v=1">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dropdown.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/particle.css' %}">
 
     <script src="{% static 'js/jquery.min.js' %}"></script>
 </head>
 
 <body>
-    {% block slideshow %}{% endblock %}
+    {% block maincontent %}{% endblock %}
     {% block profile_not_found %}{% endblock %}
     {% block page_not_found %}{% endblock %}
-
+<!--
     <div id="background"></div>
     <script type="text/javascript" src="{% static 'js/generator.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/particle_settings.js' %}"></script>
@@ -23,7 +25,7 @@
         particleGenerator("background", particlesNumber*0.3, "particle", "yellow");
         particleGenerator("background", particlesNumber*0.2, "particle", "lime");
     </script>
-    <script type="text/javascript" src="{% static 'js/particle_animation.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/particle_animation.js' %}"></script>-->
 
 </body>
 

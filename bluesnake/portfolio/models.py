@@ -51,7 +51,7 @@ class Profile(models.Model):
 
     avatar = models.ImageField(default='', blank=True, upload_to='images/profile_photos/')
 
-    about = RichTextField(default='', blank=True)
+    summary = RichTextField(default='', blank=True)
     skills = models.ManyToManyField(Skill, blank=True)
     expirience = models.ManyToManyField(WorkExpirience, blank=True)
 

@@ -1,0 +1,123 @@
+#dropdown-menu {
+    position:fixed;
+    width:100vw;
+    height:6vw;
+    z-index:3;
+
+    background-color:rgba(122, 72, 254, 1.0);
+}
+
+#dropdown-menu span {
+    cursor:pointer;
+}
+
+
+#dropdown-menu span:hover {
+    background-color:rgba(135, 94, 245, 1.0);
+}
+
+
+#dropdown-menu #open {
+    position:relative;
+    display:flex;
+    width:6vw;
+    height:6vw;
+    margin-left:auto;
+    margin-right:1vw;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+#dropdown-menu #open div {
+    width:70%;
+    height:10%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:0.5vw;
+    margin-top:0.5vw;
+    border-radius:1vw;
+
+    background-color:white;
+}
+
+
+#dropdown-menu #open + input[type="checkbox"] {display:none;}
+
+
+#dropdown-content {
+    position:absolute;
+    transform: translateX(-100%);
+    transition:1s;
+    width:40vw;
+    height:100vh;
+    top:0;left:0;
+
+    background-color:rgba(110, 62, 238, 1.0);
+}
+
+
+#dropdown-content #close {
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:5vw;
+    height:5vw;
+    margin-top:1vw;
+    margin-left:1vw;
+    margin-right:auto;
+    z-index:2;
+}
+
+
+#dropdown-content #close div:first-child {
+    position:absolute;
+    width:80%;
+    height:10%;
+    border-radius:1vw;
+    transform:rotate(45deg);
+    background-color:white;
+    z-index:3;
+}
+
+
+#dropdown-content #close div:last-child {
+    position:absolute;
+    width:80%;
+    height:10%;
+    border-radius:1vw;
+    transform:rotate(-45deg);
+    background-color:white;
+}
+
+
+#dropdown-content ul {
+    position:relative;
+    display:block;
+    width:80%;
+}
+
+#dropdown-content ul li {
+    list-style-type:none;
+    padding:1vw;
+    border-radius:4vw;
+}
+
+
+#dropdown-content ul li a {
+    list-style-type:none;
+    font-family: "BrandonText Medium";
+    font-size:4vw;
+    font-weight:500;
+    overflow-wrap:break-word;
+
+    color:white;
+}
+
+
+#dropdown-content ul li:hover {
+    background-color:rgba(135, 94, 245, 1.0);
+    transition:0.5s;
+    transform: scale(1.025);
+}
