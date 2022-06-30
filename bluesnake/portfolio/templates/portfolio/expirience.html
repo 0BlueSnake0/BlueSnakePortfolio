@@ -2,7 +2,12 @@
 <div class="hook" id="expirience-slide"></div>
 <section style="box-shadow: 1vw 1vw 5vw 0vw rgba(0,0,0,0.7);" class="content-block">
     <h1 style="text-align:center;">Work expirience</h1>
-    <h2 style="text-align:center;">May be yor amazing company will take the place of empty node?</h2>
+    <p style="text-align:center;width:80%;margin-left:auto;margin-right:auto;">
+        Click on node to see work expirience details.
+    </p>
+    <p style="text-align:center;width:80%;margin-left:auto;margin-right:auto;">
+        May be yor amazing company will take the place of empty node?
+    </p>
     {% with currentProfile.expirience.all as nodeList %}
         {% include 'graph.html' %}
     {% endwith %}

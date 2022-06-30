@@ -11,26 +11,9 @@
 
 #hello {
     position:relative;
-    width:40%;
-    z-index:1;
-}
-
-
-#hello h1 {
-    animation:fading-appearance 2s;
-}
-
-
-#hello img[class="background-img"] {
-    position:absolute;
     display:block;
-    width:200vw;
-    height:100vw;
-    top:0;left:50%;
-
-    background-color:rgba(73, 15, 227, 1.0);
-    transform: rotate(-45deg);
-    z-index:0;
+    width:70%;
+    z-index:1;
 }
 
 
@@ -40,7 +23,6 @@
     width:80%;
     font-family: 'BrandonText Medium';
     font-weight:800;
-    font-size:1.5vw;
     word-wrap:break-word;
     z-index:1;
     margin-top:5vw;
@@ -50,12 +32,35 @@
 }
 
 
-#contact-apps {
-    position:relative;
-    display:flex;
-    width:auto;
-    height:auto;
-    bottom:0;top:100%;
-    margin-left:auto;
-    margin-right:4vw;
+#hello img[class="background-img"] {
+    position:absolute;
+    display:block;
+    width:300vw;
+    height:300vw;
+    top:0;left:50%;
+
+    background-color:rgba(73, 15, 227, 1.0);
+    transform: rotate(-45deg);
+    z-index:-1;
+}
+
+/* Mobile styles */
+@media screen and (max-width:1060px) {
+    #summary {
+        font-size:3vw;
+    }
+    .hello-title {
+        font-size:7vw;
+    }
+}
+
+
+/* Desktop styles */
+@media screen and (min-width:1060px) {
+    #summary {
+        font-size:4vw;
+    }
+    .hello-title {
+        font-size:6vw;
+    }
 }

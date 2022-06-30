@@ -68,7 +68,7 @@ class Project(models.Model):
     name = models.CharField(default='', max_length=255)
     github = models.URLField(default='', max_length=255)
     preview = models.ImageField(default='', upload_to='images/project_previews/')
-    description = RichTextField(default='', blank=True)
+    description = RichTextField(default='', blank=True, max_length=500)
     profile = models.ForeignKey(Profile, default='', on_delete=models.CASCADE)
 
     def __str__(self):

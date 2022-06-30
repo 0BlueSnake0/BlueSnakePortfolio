@@ -1,13 +1,23 @@
 :root {
-    --node-size:4.5vw;
+    --node-size:5vw;
     --node-background:white;
 }
+
+
+.expirience-details {
+    position:relative;
+    display:block;
+    width:30%;
+}
+
 
 .expirience {
     position:relative;
     display:none;
-    width:100%;
-    height:100%;
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+    height:80%;
     animation: fading-appearance 0.8s;
 }
 
@@ -15,12 +25,6 @@
     position:relative;
     display:block;
     width:100%;
-}
-
-.expirience-details {
-    position:relative;
-    display:block;
-    width:40%;
 }
 
 .expirience-description {
@@ -41,11 +45,11 @@
 
 #graph-field {
     display:block;
-    margin:2vw;
+    margin:4vw;
     position:relative;
     border-radius:2em;
-    width:60vw;
-    height:60vw;
+    width:50vw;
+    height:50vw;
     background: linear-gradient(90deg, rgba(48,48,189,1) 20%, rgba(86,127,250,1) 60%, rgba(176,248,255,1) 100%, rgba(0,212,255,1) 100%);
     z-index:3;
 }
@@ -72,8 +76,6 @@
     text-align:center;
     justify-content:center;
     align-items:center;
-    font-weight:bold;
-    font-size:1.25vw;
     z-index:1;
 
     background-color:var(--node-background);
@@ -84,7 +86,7 @@
 
 
 .node:hover {
-    transform: translate(-50%) scale(1.25);
+    transform: translate(-50%) scale(1.5);
 }
 
 

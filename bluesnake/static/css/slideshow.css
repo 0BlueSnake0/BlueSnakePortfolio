@@ -4,7 +4,6 @@
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    width:80vw;
     margin-left:auto;
     margin-right:auto;
 }
@@ -17,8 +16,7 @@
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    width:80vw;
-    height:70vw;
+    width:100%;
     border-radius:2vw;
     box-shadow: 1vw 1vw 5vw 0vw rgba(0,0,0,0.4);
     margin-left:auto;
@@ -26,11 +24,9 @@
     animation-duration: 0.8s;
 }
 
-
 .slide h2 {
     text-align:center;
     margin-bottom:2vw;
-    font-size:3vw;
     font-family:"BrandonText Medium";
     font-weight:bold;
 }
@@ -52,8 +48,8 @@
 
 .slideshow-dot {
     position:relative;
-    width:3vw;
-    height:3vw;
+    width:4vw;
+    height:4vw;
     margin:1vw;
     border-radius:3vw;
     cursor:pointer;
@@ -61,3 +57,21 @@
 
     background-color:rgba(122, 82, 231, 1.0);
 }
+
+
+
+/* Desktop styles */
+@media screen and (min-width:1060px) {
+    .slideshow {
+        width:600vw;
+    }
+}
+
+
+/* Mobile styles */
+@media screen and (max-width:1060px) {
+    .slideshow {
+        width:80vw;
+    }
+}
+

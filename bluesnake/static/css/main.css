@@ -7,7 +7,6 @@ body {
     position:relative;
     display:block;
     width:100%;
-    height:auto;
     overflow-x:hidden;
     color: #6e7076;
     font-family:"BrandonText Light";
@@ -50,7 +49,6 @@ a {text-decoration:none;}
 h1 {
     font-family:"BrandonText Medium";
     font-weight:600;
-    font-size:3vw;
     color: #344058;
 }
 
@@ -58,14 +56,37 @@ h1 {
 h2 {
     font-family:"BrandonText Medium";
     font-weight:500;
-    font-size:2vw;
-    color: #344058
+    color: #344058;
 }
 
 
 h3 {
     font-family:"BrandonText Light";
     font-weight:800;
-    font-size:1.5vw;
-    color: #344058
+    color: #344058;
+}
+
+
+p {
+    font-family:"Comfortaa Light";
+    font-weight:800;
+    color: gray;
+}
+
+
+/* Mobile styles */
+@media screen and (max-width:1060px) {
+    h1 {font-size:7vw;}
+    h2 {font-size:5vw; }
+    h3 {font-size:4vw;}
+    p {font-size:3vw;}
+}
+
+
+/* Desktop styles */
+@media screen and (min-width:1060px) {
+    h1 {font-size:4vw;}
+    h2 {font-size:3.2vw;}
+    h3 {font-size:2.5vw;}
+    p {font-size:1.875vw;}
 }

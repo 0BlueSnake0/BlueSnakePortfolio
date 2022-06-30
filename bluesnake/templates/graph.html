@@ -17,7 +17,7 @@
         {% for Node in nodeList %}
             {% get_item_index nodeList Node as nodeIndex %}
             <div id="exp-{{nodeIndex}}" class="expirience">
-                <h1 class="expirience-title">{{Node.company}}</h1>
+                <h2 class="expirience-title">{{Node.company}}</h2>
                 <img src="{{Node.company_logo.url}}">
                 <p class="expirience-description">{{Node.start}} - {{Node.end}}</p>
             </div>

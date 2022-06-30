@@ -10,8 +10,8 @@ function ActivateSlide(slideshowID, slideIndex)
         if (lastIndex < slideIndex) slideToActivate.css("animation-name", "swipe-left");
         else if (lastIndex > slideIndex) slideToActivate.css("animation-name", "swipe-right");
         slideToActivate.css("display", "flex");
-        dotToActivate.css("width", "6vw");
-        oldDot.css("width", "3vw");
+        dotToActivate.css("width", "8vw");
+        oldDot.css("width", "4vw");
         lastIndex = slideIndex;
     }
 }
