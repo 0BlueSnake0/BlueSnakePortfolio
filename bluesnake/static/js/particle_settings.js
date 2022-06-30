@@ -1,4 +1,3 @@
-var particlesNumber = 200;
 var leftParticleDurationBorder=3, rightParticleDurationBorder=15;
 var leftSizeBorder=4, rightSizeBorder=12;
 

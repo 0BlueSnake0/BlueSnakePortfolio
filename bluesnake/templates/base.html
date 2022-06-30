@@ -13,7 +13,7 @@
     <script src="{% static 'js/jquery.min.js' %}"></script>
 </head>
 
-<body id="particle-generator">
+<body id="body">
     {% block maincontent %}{% endblock %}
     {% block profile_not_found %}{% endblock %}
     {% block page_not_found %}{% endblock %}
@@ -22,8 +22,8 @@
     <script type="text/javascript" src="{% static 'js/particle_settings.js' %}"></script>
     <script>
         function RandomInt(border1, border2) {return Math.floor(border1 + Math.random() * (border2 - border1));}
-        particleGenerator("particle-generator", particlesNumber*1.0, "particle", "cornflowerblue");
-//         particleGenerator("particle-generator", particlesNumber*0.4, "particle", "white");
+        particleGenerator("body", 100, "particle", "cornflowerblue");
+        particleGenerator("contact", 30, "particle", "white");
     </script>
     <script type="text/javascript" src="{% static 'js/particle_animation.js' %}"></script>
 

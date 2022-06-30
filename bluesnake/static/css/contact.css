@@ -2,11 +2,12 @@
     position:relative;
     display:block;
     width:100%;
-    height:auto;
     bottom:0;
     padding-top:2vw;
     z-index:2;
     box-shadow: 1vw 1vw 5vw 0vw rgba(0,0,0,0.7);
+    overflow:hidden;
+    z-index:2;
 
     background-color:rgba(122, 72, 254, 1.0);
 }
