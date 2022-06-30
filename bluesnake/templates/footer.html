@@ -1,0 +1,34 @@
+{% load static %}
+<footer id="contact">
+    <ul class="contact-list">
+        <h1>Contact me</h1>
+        <li><a href="tel:{{currentProfile.phone_number}}">
+            <img class="contact-icon" class="" src="{% static 'images/icons/phone.png' %}">
+            <p>{{currentProfile.phone_number}}</p>
+        </a></li>
+        <li><a href="mailto:{{currentProfile.email}}">
+            <p style="font-weight:900;font-size:5vw;margin:1vw;">@</p>
+            <p>{{currentProfile.email}}</p>
+        </a></li>
+        {% if currentProfile.github %}
+        <li><a href="{{currentProfile.github}}">
+            <img class="contact-icon" class="" src="{% static 'images/icons/github.png' %}">
+            <p>Github</p>
+        </a></li>
+        {% endif %}
+
+        {% if currentProfile.telegram %}
+        <li><a href="{{currentProfile.telegram}}">
+            <img class="contact-icon" src="{% static 'images/icons/telegram-white.png' %}">
+            <p>Telegram</p>
+        </a></li>
+        {% endif %}
+
+        {% if currentProfile.linkedIn %}
+        <li><a href="{{currentProfile.linkedIn}}">
+            <img class="contact-icon" src="{% static 'images/icons/linkedIn-white.png' %}">
+            <p>LinkedIn</p>
+        </a></li>
+        {% endif %}
+    </ul>
+</footer>

@@ -1,71 +1,102 @@
-#skills-container {
-    display:flex;flex-direction:column;
+#skills {
+    margin-top:6vw;
+    display::block;
+    text-align:center;
+    overflow:hidden;
+    background:rgba(153, 150, 253, 0.1);
+    box-shadow: 1vw 1vw 5vw 0vw rgba(0,0,0,0.7);
+}
+
+#skills h2 {
+    font-weight:600;
+}
+
+
+.skill-category {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    z-index:2;
 }
 
 .skill-line {
-    display:flex;justify-content:center;align-items:center;
-}
-
-.category-title {
-    font-family: Roboto;
-    font-weight:900;
-    font-size:1.5em;
-    color:#32364e;   
-    text-align: center;
-}
-
-
-.skill-icon {
-    width:5em;
-    height:5em;
-    margin:0.5em;
-    cursor:pointer;
-    z-index:1;
-}
-
-.skill-icon:hover {
-    transform:scale(1.05);
-    opacity:0.8;
-}
-
-@keyframes show-hint {
-    from {
-        display:block;
-        transform: translateX(-100%) translateY(100%);
-        opacity:0;
-    }
-    to {
-        display:block;
-        transform: translateX(0%) translateY(0%);
-        opacity:1;
-    }
-}
-
-
-.skill-icon + input[type="checkbox"] + span {
-    display:none;
-    color:rgb(50, 16, 101);
-    background-color:rgba(106, 250, 154, 1);
-    border-radius:1em;
-    width:auto;
-    padding:1em;
-    font-weight:800;
-    font-size:1.5em;
-    position:absolute;
-    left:100%;
-    top:-10%;
-    transition:2s;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    width:100%;
     z-index:2;
 }
 
 
-.skill-icon + input[type="checkbox"] {
+.skill {
+    position:relative;
+
+}
+
+.skill-icon {
+    width:6vw;
+    margin:1vw;
+    z-index:1;
+    cursor:pointer;
+}
+
+
+.skill-icon:hover {
+    opacity:0.8;
+    transform: scale(1.05);
+}
+
+
+.skill-icon +input[type="checkbox"] {
     display:none;
 }
 
 
-.skill-icon + input[type="checkbox"]:checked + span {
-    animation: show-hint 0.5s;
-    transition:2s;
+.skill-icon + input[type="checkbox"] + .skill-hint {
+    position:absolute;
+    display:none;
+    font-family:"BrandonText Light";
+    font-weight:400;
+    font-size:2vw;
+    padding:2vw;
+    border-radius:1vw;
+    left:100%;
+    bottom:50%;
+    z-index:2;
+
+    background-color:white;
+    animation: fading-hint 0.6s;
+}
+
+
+.skill-icon +input[type="checkbox"]:checked + .skill-hint {
     display:block;
 }
+
+
+
+#skills-list {
+    position:relative;
+    display:block;
+    width:75%;
+    margin-left:auto;
+    margin-right:auto;
+    z-index:2;
+    color: #344058;
+}
+
+
+#skills img[class="background-img"]  {
+    position:absolute;
+    display:block;
+    width:200vw;
+    height:100vw;
+    top:0;left:-100%;
+
+    background-color:rgba(73, 15, 227, 0.5);
+    transform: rotate(45deg);
+    z-index:-1;
+}
+

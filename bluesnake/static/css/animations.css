@@ -1,0 +1,143 @@
+@keyframes fading-appearance {
+    from {
+        opacity:0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity:1;
+        transform: translateX(0%);
+    }
+}
+
+
+@keyframes appearance {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+
+@keyframes fading {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+
+@keyframes node-grow {
+    from {
+        width:0;
+        height:0;
+    }
+    to {
+        width:var(--node-size);
+        height:var(--node-size);
+    }
+}
+
+
+@keyframes flowing-energy-right
+{
+    0% {left:0%;}
+    100% {left:100%;}
+}
+
+
+@keyframes flowing-energy-left
+{
+    0% {left:100%;}
+    100% {left:0%;}
+}
+
+
+@keyframes fading-hint {
+    from {
+        transform: translateX(-100%) translateY(100%);
+        opacity:0;
+    }
+    to {
+        tranform: translate(0%);
+        opacity:1;
+    }
+}
+
+
+@keyframes swipe-left {
+    from {
+        opacity:0;
+        transform: translate(100%);
+    }
+    to {
+        opacity:1;
+        transform: translate(0%);
+    }
+}
+
+
+@keyframes swipe-right {
+    from {
+        opacity:0;
+        transform: translate(-100%);
+    }
+    to {
+        opacity:1;
+        transform: translate(0%);
+    }
+}
+
+
+@keyframes particleMoveLeft {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(calc(-1*var(--movement)));opacity: 0.0;}
+}
+
+
+@keyframes particleMoveRight {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(var(--movement));opacity: 0.0;}
+}
+
+
+@keyframes particleMoveTop {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateY(calc(-1*var(--movement)));opacity: 0.0;}
+}
+
+
+@keyframes particleMoveBottom {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateY(var(--movement));opacity: 0.0;}
+}
+
+@keyframes particleMoveLeftTop {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(calc(-1*var(--movement))) translateY(calc(-1*var(--movement)));opacity: 0.0;}
+}
+
+
+@keyframes particleMoveRightTop {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(var(--movement)) translateY(calc(-1*var(--movement)));opacity: 0.0;}
+}
+
+
+@keyframes particleMoveLeftBottom {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(calc(-1*var(--movement))) translateY(var(--movement));opacity: 0.0;}
+}
+
+
+@keyframes particleMoveRightBottom {
+    0% {opacity: 0.0;transform: translateX(0%);}
+    50% {opacity: 1.0;}
+    100% {transform: translateX(var(--movement)) translateY(var(--movement));opacity: 0.0;}
+}

@@ -1,72 +1,58 @@
-.project {
-    margin:0.5em;
-    padding-left:2em;
-    padding-right:2em;
-    padding-bottom:2em; 
-    padding-top:1em;
-    width:25%;
-    min-height:10em;
-    border-radius: 0.75em;
-    background-color: rgba(100, 149, 237, 0.2);
-    display:flex;
-    flex-direction: column; 
-    justify-content:center;
-}
-
-
-.project:hover {
-    background-color: rgba(100, 149, 237, 0.3);
-}
-
-
-
-.project h4 {
-    font-size:2vw;
-    color:black;
-    font-weight:800;
-    height:10%;
+#projects h1 {
+    font-family:"BrandonText Bold";
+    margin-bottom:2vw;
 }
 
 
 .project-preview {
-    width: 100%;
-    height:auto;
-    border-radius:1em;
     position:relative;
+    display:block;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-
-.project-description {  
-    color:#535561;  
-    font-size:1em;
-    font-weight: 600;
-    text-align:center;
-    bottom:0;
+.project-description {
+    font-family:"Comfortaa Light";
+    text-align:justify;
+    font-size:1.5vw;
+    height:100%;
+    padding:2vw;
 }
 
 
 .github-link {
+    position:absolute;
+    bottom:2vw;
     display:flex;
     align-items:center;
-    padding-left:1em;padding-right:1em;
-    background-color: rgba(100, 149, 237, 0.2);
-    border-radius:2em;
-    width:auto;
-    position:relative;
+    with:20%;
+    letter-spacing:0.25vw;
+    padding-left:2vw;
+    padding-right:2vw;
 }
 
 
-.github-link img:hover {
-    opacity:0.8;
+.github-link:hover {
+    opacity:0.5;
+    border-radius:4vw;
+    transform: scale(1.05);
+    background-color:rgba(122, 82, 231, 0.1);
 }
 
 
 .github-link h3 {
-    color:#534DA5;
-    margin:0.8em;
+    font-family:"Comfortaa";
+    font-size:2vw;
+    font-weight:800;
+    color:blue;
+    margin-left:1vw;
+    margin-right:1vw;
 }
 
 
-.github-link:hover h3 {
-    color:#9792E2;
+.github-link img {
+    width:4vw;
+    height:4vw;
+    border-radius:50%;
 }

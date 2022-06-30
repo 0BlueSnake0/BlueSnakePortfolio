@@ -1,9 +1,9 @@
 {% load static %}
-<div class="experience-slide slideshow-item">
-    <div class="content-block">
-        <h1 class="content-block-title">Work expirience</h1>
-        {% with currentProfile.expirience.all as nodeList %}
-            {% include 'graph.html' %}
-        {% endwith %}
-    </div> 
-</div>
+<div class="hook" id="expirience-slide"></div>
+<section style="box-shadow: 1vw 1vw 5vw 0vw rgba(0,0,0,0.7);" class="content-block">
+    <h1 style="text-align:center;">Work expirience</h1>
+    <h2 style="text-align:center;">May be yor amazing company will take the place of empty node?</h2>
+    {% with currentProfile.expirience.all as nodeList %}
+        {% include 'graph.html' %}
+    {% endwith %}
+</section>

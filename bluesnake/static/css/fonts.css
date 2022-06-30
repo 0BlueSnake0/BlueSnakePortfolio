@@ -18,17 +18,17 @@
 
 @font-face {
     font-family:'Comfortaa Bold';
-    src:url('/static/css/fonts/Comfortaa-Bold.ttf') format('ttf');
+    src:url('/static/css/fonts/Comfortaa-Bold.woff') format('woff');
 }
 
 
 @font-face {
-    font-family:'Comfortaa Regular';
-    src:url('/static/css/fonts/Comfortaa-Regular.ttf') format('ttf');
+    font-family:'Comfortaa';
+    src:url('/static/css/fonts/Comfortaa.woff') format('woff');
 }
 
 
 @font-face {
     font-family:'Comfortaa Light';
-    src:url('/static/css/fonts/Comfortaa-Light.ttf') format('ttf');
+    src:url('/static/css/fonts/Comfortaa-Light.woff') format('woff');
 }

@@ -1,13 +1,13 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/hello.css' %}?v=3">
+<div id="hello-slide"></div>
 <section id="greeting" class="content-block">
     <div style="display:flex;">
         <div id="hello">
-            <p class="hello-title">
+            <h1 class="hello-title">
             Hi there! I'm {{currentProfile.firstname}}, {{currentProfile.target_vacancy}}.
             And I'm glad you're here!
-            </p>
-            <img>
+            </h1>
+            <img class="background-img">
         </div>
         <div id="contact-apps">
             {% if currentProfile.telegram %}
@@ -27,5 +27,5 @@
             {% endif %}
         </div>
     </div>
-    <div id="about">{{currentProfile.summary|safe}}</div>
+    <div id="summary">{{currentProfile.summary|safe}}</div>
 </section>

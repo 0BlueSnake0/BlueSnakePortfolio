@@ -1,11 +1,29 @@
 #dropdown-menu {
     position:fixed;
+    display:flex;
+    align-items:center;
     width:100vw;
-    height:6vw;
-    z-index:3;
+    height:8vw;
+    top:0;left:0;
+    z-index:4;
 
     background-color:rgba(122, 72, 254, 1.0);
 }
+
+#logo {
+    position:absolute;
+    display:block;
+    height:5vw;
+    margin-left:1vw;
+    font-family:"Comfortaa Bold";
+    text-transform:lowercase;
+    font-size:5vw;
+    letter-spacing:-0.5vw;
+    left:0;
+
+    color:white;
+}
+
 
 #dropdown-menu span {
     cursor:pointer;
@@ -23,7 +41,7 @@
     width:6vw;
     height:6vw;
     margin-left:auto;
-    margin-right:1vw;
+    margin-right:3vw;
     flex-direction:column;
     justify-content:center;
 }
@@ -52,6 +70,7 @@
     width:40vw;
     height:100vh;
     top:0;left:0;
+    z-index:4;
 
     background-color:rgba(110, 62, 238, 1.0);
 }
@@ -106,6 +125,9 @@
 
 
 #dropdown-content ul li a {
+    position:relative;
+    display:block;
+    width:100%;
     list-style-type:none;
     font-family: "BrandonText Medium";
     font-size:4vw;

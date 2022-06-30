@@ -29,7 +29,7 @@ function Spawn(nodeId, nodes)
         $("#" + nodeId).css("top",  PixelsToPercents(y, fieldHeight) + "%");
 }
 
-var nodes = $("#random-graph-field .node");
+var nodes = $("#graph-field .node");
 
 for (var node of nodes) {
     connections[node.id] = {};

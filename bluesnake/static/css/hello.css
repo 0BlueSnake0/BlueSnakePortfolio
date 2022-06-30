@@ -1,51 +1,11 @@
-@keyframes fading-appearance {
-    from {
-        opacity:0;
-        transform: translateX(-100%);
-    }
-    to {
-        opacity:1;
-        transform: translateX(0%);
-    }
-}
-
-
-@keyframes appearance {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0%);
-    }
-}
-
-
-@keyframes fading {
-    from {opacity:0;}
-    to {opacity:1;}
-}
-
-
-.hello-title {
-    position:relative;
-    font-family: 'BrandonText Bold';
-    font-weight:500;
-    font-size:3vw;
-    color: #344058;
-    animation:fading-appearance 2s;
-}
-
-
 #greeting {
-    top:8vw;
-    position:relative;
+    top:6vw;
     margin-left:auto;
     margin-right:auto;
-    padding:2vw;
-    border-radius:2vw;
     background:rgba(153, 150, 253, 0.1);
     animation:fading 4s;
     overflow:hidden;
+    padding-bottom:15vw;
 }
 
 
@@ -56,8 +16,14 @@
 }
 
 
-#hello img {
+#hello h1 {
+    animation:fading-appearance 2s;
+}
+
+
+#hello img[class="background-img"] {
     position:absolute;
+    display:block;
     width:200vw;
     height:100vw;
     top:0;left:50%;
@@ -68,11 +34,13 @@
 }
 
 
-#about {
+#summary {
     position:relative;
+    display:block;
+    width:80%;
     font-family: 'BrandonText Medium';
     font-weight:800;
-    font-size:1em;
+    font-size:1.5vw;
     word-wrap:break-word;
     z-index:1;
     margin-top:5vw;
@@ -87,19 +55,7 @@
     display:flex;
     width:auto;
     height:auto;
+    bottom:0;top:100%;
     margin-left:auto;
-}
-
-
-#contact-apps .contact-icon {
-    position:relative;
-    display:block;
-    width:4vw;
-    margin:0.5vw;
-}
-
-
-#contact-apps .contact-icon:hover {
-    opacity:0.75;
-    transform: scale(1.05);
+    margin-right:4vw;
 }

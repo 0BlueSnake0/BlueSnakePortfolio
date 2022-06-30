@@ -1,0 +1,17 @@
+{% load static %}
+<header id="dropdown-menu">
+    <label id="logo">bluesnake</label>
+    <span id="open" onclick="PressDropdown()"><div></div><div></div></span>
+    <input id="dropdown-check" type="checkbox">
+    <div id="dropdown-content">
+        <span id="close" onclick="PressDropdown()"><div></div><div></div></span>
+        <ul>
+            <li><a onclick="PressDropdown()" href="#hello-slide">Hi</a></li>
+            <li><a onclick="PressDropdown()" href="#skills-slide"">Skills</a></li>
+            <li><a onclick="PressDropdown()" href="#projects-slide">Projects</a></li>
+            <li><a onclick="PressDropdown()" href="#expirience-slide">Work expirience</a></li>
+            <li><a onclick="PressDropdown()" href="#contact">Contact</a></li>
+        <ul>
+    </div>
+</header>
+<script type="text/javascript" src="{% static 'js/dropdown.js' %}"></script>
