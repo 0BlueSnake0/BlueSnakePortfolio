@@ -1,22 +1,18 @@
-:root {
-
-}
-
-
 body {
-    position:relative;
-    display:block;
-    width:100%;
+    position:absolute;
     overflow-x:hidden;
+    width:100%;
     color: #6e7076;
     font-family:"BrandonText Light";
     z-index:10;
 }  
 
+
 body::-webkit-scrollbar-thumb {
     background-color: rgba(255,255,255,0.8);
     border-radius: 2em;
 }
+
 
 body::-webkit-scrollbar-thumb:hover {
     background-color: rgba(255,255,255,0.7);
@@ -37,16 +33,12 @@ body::-webkit-scrollbar {
 }
 
 
-.hook {
-    position:relative;
-    display:block;
-    height:6vw;
-}
-
 a {text-decoration:none;}
 
 
 h1 {
+    position:relative;
+    display:block;
     font-family:"BrandonText Medium";
     font-weight:600;
     color: #344058;
@@ -54,6 +46,8 @@ h1 {
 
 
 h2 {
+    position:relative;
+    display:block;
     font-family:"BrandonText Medium";
     font-weight:500;
     color: #344058;
@@ -61,6 +55,8 @@ h2 {
 
 
 h3 {
+    position:relative;
+    display:block;
     font-family:"BrandonText Light";
     font-weight:800;
     color: #344058;
@@ -85,8 +81,8 @@ p {
 
 /* Desktop styles */
 @media screen and (min-width:1060px) {
-    h1 {font-size:4vw;}
-    h2 {font-size:3.2vw;}
-    h3 {font-size:2.5vw;}
-    p {font-size:1.875vw;}
+    h1 {font-size:3vw;}
+    h2 {font-size:2vw;}
+    h3 {font-size:1.5vw;}
+    p {font-size:1.125vw;}
 }

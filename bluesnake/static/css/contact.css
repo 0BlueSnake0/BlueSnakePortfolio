@@ -3,18 +3,16 @@
     display:block;
     width:100%;
     bottom:0;
-    padding-top:2vw;
-    z-index:2;
-    box-shadow: 1vw 1vw 5vw 0vw rgba(0,0,0,0.7);
+    box-shadow: 2vw 2vw 6vw 0vw rgba(0,0,0,0.8);
     overflow:hidden;
-    z-index:2;
+    z-index:3;
 
     background-color:rgba(122, 72, 254, 1.0);
 }
 
 
 ul[class="contact-list"] {
-    margin-left:8%;
+    left:8%;
 }
 
 
@@ -28,9 +26,7 @@ ul[class="contact-list"] li a {
     display:flex;
     align-items:center;
     width:50%;
-    border-radius:4vw;
     text-align:center;
-    font-size:2vw;
 }
 
 
@@ -44,11 +40,9 @@ ul[class="contact-list"] li a p {
 }
 
 
-#contact .contact-list h1 {
-    position:relative;
-    display:block;
-    margin-top:3vw;
+#contact h1 {
     font-family:"Comfortaa Bold";
+    width:50%;
     color:white;
 }
 
@@ -80,6 +74,13 @@ ul[class="contact-list"] li a p {
     .contact-icon {
         width:8vw;
     }
+    #contact .contact-list .contact-icon {
+        width:6vw;
+    }
+    ul[class="contact-list"] li a {
+        font-size:2vw;
+        border-radius:2vw;
+    }
 }
 
 
@@ -87,5 +88,12 @@ ul[class="contact-list"] li a p {
 @media screen and (min-width:1060px) {
     .contact-icon {
         width:4vw;
+    }
+    #contact .contact-list .contact-icon {
+        width:3vw;
+    }
+    ul[class="contact-list"] li a {
+        font-size:1vw;
+        border-radius:1vw;
     }
 }

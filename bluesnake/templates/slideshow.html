@@ -5,12 +5,11 @@
         {% for project in projects %}
             {% get_item_index projects project as slideIndex %}
             <div id="projects-slideshow-slide-{{slideIndex}}" class="slide">
-                <h2>{{project.name}}</h2>
                 {% if project.preview and project.preview.url %}
-                    <img src="{{project.preview.url}}" class="project-preview">
+                    <img src="{{project.preview.url}}" class="slide-image">
                 {% endif %}
                 <div class="project-description">
-                    <h3>{{project.name}}</h3>
+                    <h2>{{project.name}}</h2>
                     {{project.description|safe}}
                     <a target="_blank" href="{{project.github}}" class="github-link">
                         <h3>View on git</h3>

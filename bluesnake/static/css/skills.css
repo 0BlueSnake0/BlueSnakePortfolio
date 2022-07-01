@@ -38,6 +38,7 @@
 .skill img {
     position:relative;
     display:block;
+    cursor:pointer;
 }
 
 
@@ -89,10 +90,10 @@
     position:absolute;
     display:block;
     width:200vw;
-    height:100vw;
+    height:200vw;
     top:0;left:-100%;
 
-    background-color:rgba(73, 15, 227, 0.5);
+    background-color:rgba(122, 72, 254, 1.0);
     transform: rotate(45deg);
     z-index:-1;
 }
@@ -111,7 +112,7 @@
 /* Desltop styles */
 @media screen and (min-width:1060px) {
     .skill img {
-        width:6vw;
+        width:5vw;
         margin:1vw;
     }
 }

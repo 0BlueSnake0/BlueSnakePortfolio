@@ -10,26 +10,17 @@
 }
 
 
-#logo {
+
+#dropdown-menu #logo {
     position:absolute;
     display:flex;
     align-items:center;
     margin-left:1vw;
     font-family:"Comfortaa Bold";
     text-transform:lowercase;
-    letter-spacing:-0.5vw;
+/*     letter-spacing:-0.5vw; */
 
     color:white;
-}
-
-
-#dropdown-menu span {
-    cursor:pointer;
-}
-
-
-#dropdown-menu span:hover {
-    background-color:rgba(135, 94, 245, 1.0);
 }
 
 
@@ -39,6 +30,8 @@
     margin-left:auto;
     flex-direction:column;
     justify-content:center;
+    cursor:pointer;
+    background-color:rgba(135, 94, 245, 1.0);
 }
 
 
@@ -62,7 +55,7 @@
     position:absolute;
     transform: translateX(-100%);
     transition:1s;
-    width:40vw;
+    width:45vw;
     height:200vh;
     top:0;left:0;
     z-index:4;
@@ -141,11 +134,11 @@
 
 /* Mobile styles */
 @media screen and (max-width:1060px) {
-    #logo {
-        font-size:6vw;
-    }
     #dropdown-menu {
         height:9vw;
+    }
+   #dropdown-menu #logo {
+        font-size:6vw;
     }
     #dropdown-menu #open {
         width:9vw;
@@ -162,22 +155,22 @@
 
 
 /* Desktop styles */
-@media screen and(min-width:1060px) {
-    #logo {
-        font-size:4vw;
-    }
+@media screen and (min-width:1060px) {
     #dropdown-menu {
-        height:7vw;
+        height:4.5vw;
+    }
+    #dropdown-menu #logo {
+        font-size:3vw;
     }
     #dropdown-menu #open {
-        width:7vw;
-        height:7vw;
+        width:4.5vw;
+        height:4.5vw;
     }
     #dropdown-menu #close {
-        width:7vw;
-        height:7vw;
+        width:4.5vw;
+        height:4.5vw;
     }
     #dropdown-content ul li a {
-        font-size:3vw;
+        font-size:2.5vw;
     }
 }

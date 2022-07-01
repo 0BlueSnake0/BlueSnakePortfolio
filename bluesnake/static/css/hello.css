@@ -37,7 +37,7 @@
     display:block;
     width:300vw;
     height:300vw;
-    top:0;left:50%;
+    top:0;
 
     background-color:rgba(73, 15, 227, 1.0);
     transform: rotate(-45deg);
@@ -59,8 +59,5 @@
 @media screen and (min-width:1060px) {
     #summary {
         font-size:4vw;
-    }
-    .hello-title {
-        font-size:6vw;
     }
 }

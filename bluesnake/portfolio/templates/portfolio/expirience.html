@@ -1,14 +1,51 @@
 {% load static %}
-<div class="hook" id="expirience-slide"></div>
-<section style="box-shadow: 1vw 1vw 5vw 0vw rgba(0,0,0,0.7);" class="content-block">
+{% load mytags %}
+
+<link rel="stylesheet" href="{% static 'css/expirience.css' %}">
+
+<section id="expirience" style="box-shadow: 1vw 1vw 5vw 0vw rgba(0,0,0,0.7);" class="content-block">
     <h1 style="text-align:center;">Work expirience</h1>
-    <p style="text-align:center;width:80%;margin-left:auto;margin-right:auto;">
-        Click on node to see work expirience details.
-    </p>
-    <p style="text-align:center;width:80%;margin-left:auto;margin-right:auto;">
-        May be yor amazing company will take the place of empty node?
-    </p>
+    <p style="text-align:center;width:80%;margin-left:auto;margin-right:auto;">Click on node to see work expirience details.</p>
+    <p style="text-align:center;width:80%;margin-left:auto;margin-right:auto;">May be yor amazing company will take the place of empty node?</p>
     {% with currentProfile.expirience.all as nodeList %}
-        {% include 'graph.html' %}
+        <div style="position:relative;display:flex;justify-content:space-around;">
+            <div id="graph-field">
+                <div id="graph">
+                    {% for Node in nodeList %}
+                        {% get_item_index nodeList Node as nodeIndex %}
+                        <div class="node" onclick="GetExpirience({{nodeIndex}})" id="node-{{nodeIndex}}">
+                            <img src="{{Node.company_logo.url}}">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div id="expirience-details">
+                {% for Node in nodeList %}
+                    {% get_item_index nodeList Node as nodeIndex %}
+                    <div id="exp-{{nodeIndex}}" class="expirience">
+                        <h2 class="expirience-title">{{Node.company}}</h2>
+                        <img src="{{Node.company_logo.url}}">
+                        <p class="expirience-description">{{Node.start}} - {{Node.end}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <script>
+            var additionalNodes=4;
+            var index=$("#graph .node").length;
+            for (var i=0;i<additionalNodes;i++) {
+                var expirience = document.createElement("div");
+                expirience.classList.add("node");
+                expirience.id = "node-" + index;
+                document.getElementById("graph").appendChild(expirience);
+                index++;
+            }
+        </script>
     {% endwith %}
 </section>
+
+<script type="text/javascript" src="{% static 'js/expirience.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/graph_settings.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/graph_utils.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/construct_graph.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/graph_animation.js' %}"></script>

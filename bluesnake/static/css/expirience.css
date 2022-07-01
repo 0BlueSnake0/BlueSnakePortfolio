@@ -1,5 +1,4 @@
 :root {
-    --node-size:5vw;
     --node-background:white;
 }
 
@@ -7,7 +6,9 @@
 .expirience-details {
     position:relative;
     display:block;
-    width:30%;
+    margin-left:auto;
+    margin-right:auto;
+    width:auto;
 }
 
 
@@ -16,8 +17,8 @@
     display:none;
     margin-left:auto;
     margin-right:auto;
-    width:80%;
-    height:80%;
+    width:100%;
+    height:100%;
     animation: fading-appearance 0.8s;
 }
 
@@ -33,8 +34,7 @@
     height:100%;
     width:100%;
     text-align:justify;
-    font-family:"BrandonText Medium";
-    font-size:2vw;
+    font-family:"Comfortaa Light";
     word-break:break-word;
 }
 
@@ -45,11 +45,8 @@
 
 #graph-field {
     display:block;
-    margin:4vw;
     position:relative;
     border-radius:2em;
-    width:50vw;
-    height:50vw;
     background: linear-gradient(90deg, rgba(48,48,189,1) 20%, rgba(86,127,250,1) 60%, rgba(176,248,255,1) 100%, rgba(0,212,255,1) 100%);
     z-index:3;
 }
@@ -157,4 +154,30 @@
     animation-iteration-count: infinite;
     animation-duration:3s;
     animation-name: flowing-energy-right;
+}
+
+
+/* Mobile styles */
+@media screen and (max-width:1060px) {
+    #graph-field {
+        width:50vw;
+        height:40vw;
+        margin:4vw;
+    }
+    :root {
+        --node-size:5vw;
+    }
+}
+
+
+/* Desktop styles */
+@media screen and (min-width:1060px) {
+    #graph-field {
+        width:60vw;
+        height:30vw;
+        margin:2vw;
+    }
+    :root {
+        --node-size:2.5vw;
+    }
 }

@@ -7,7 +7,7 @@
             <p>{{currentProfile.phone_number}}</p>
         </a></li>
         <li><a target="_blank" href="mailto:{{currentProfile.email}}">
-            <p style="font-weight:900;font-size:5vw;margin:1vw;">@</p>
+            <img class="contact-icon" class="" src="{% static 'images/icons/email.png' %}">
             <p>{{currentProfile.email}}</p>
         </a></li>
         {% if currentProfile.github %}

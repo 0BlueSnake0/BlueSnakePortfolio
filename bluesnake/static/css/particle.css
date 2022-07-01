@@ -1,13 +1,29 @@
-:root {  
-    --movement: 50vw;
+:root {
+    --movement: 100vw;
 }
 
+
+#particle-generator {
+    position:fixed;
+    z-index:0;
+    height:100vh;
+    width:100vw;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:2;
+}
 
 
 .particle {
     position: absolute;
+    display:block;
+    overflow:hidden;
+    width:4px;
+    height:4px;
     animation-timing-function: linear;
     animation-iteration-count: infinite; 
-    animation-name: particleMoveLeft;
-    z-index:9;
+    animation-name: particleMoveTop;
+    transition:1s;
+    z-index:1;
 } 
