@@ -2,8 +2,8 @@ from django.db import models
 from datetime import date
 from solo.models import SingletonModel
 
-
-from ckeditor.fields import RichTextField
+ 
+from ckeditor_uploader.fields import RichTextUploadingField
 from phonenumber_field.modelfields import PhoneNumberField
 
 
@@ -51,9 +51,9 @@ class Profile(models.Model):
 
     avatar = models.ImageField(default='', blank=True, upload_to='images/profile_photos/')
 
-    summary = RichTextField(default='', blank=True)
+    summary = RichTextUploadingField(default='', blank=True)
     hard_skills = models.ManyToManyField(Skill, blank=True)
-    soft_skills = RichTextField(default='', blank=True)
+    soft_skills = RichTextUploadingField(default='', blank=True)
     expirience = models.ManyToManyField(WorkExpirience, blank=True)
 
     def __str__(self):
@@ -69,7 +69,7 @@ class Project(models.Model):
     name = models.CharField(default='', max_length=255)
     github = models.URLField(default='', max_length=255)
     preview = models.ImageField(default='', upload_to='images/project_previews/')
-    description = RichTextField(default='', blank=True, max_length=500)
+    description = RichTextUploadingField(default='', blank=True, max_length=500)
     profile = models.ForeignKey(Profile, default='', on_delete=models.CASCADE)
 
     def __str__(self):
