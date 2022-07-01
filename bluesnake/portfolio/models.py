@@ -52,7 +52,8 @@ class Profile(models.Model):
     avatar = models.ImageField(default='', blank=True, upload_to='images/profile_photos/')
 
     summary = RichTextField(default='', blank=True)
-    skills = models.ManyToManyField(Skill, blank=True)
+    hard_skills = models.ManyToManyField(Skill, blank=True)
+    soft_skills = RichTextField(default='', blank=True)
     expirience = models.ManyToManyField(WorkExpirience, blank=True)
 
     def __str__(self):

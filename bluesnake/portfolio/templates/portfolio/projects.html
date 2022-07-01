@@ -1,7 +1,7 @@
 {% load static %}
 {% load mytags %}
 <section id="projects" class="content-block">
-    <h1 style="text-align:center;">My projects</h1>
+    <h1>My projects</h1>
     {% get_projects currentProfile as allprojects %}
     {% with allprojects as projects %}
         {% include 'slideshow.html' %}

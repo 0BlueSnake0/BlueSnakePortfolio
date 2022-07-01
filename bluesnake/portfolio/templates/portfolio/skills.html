@@ -1,10 +1,9 @@
 {% load static %}
 {% load mytags %}
-<div id="skills-slide"></div>
-<section id="skills" class="content-block">
+<section id="hard-skills" class="content-block">
     <img class="background-img">
-    <h1>My skills</h1>
-    {% get_categories currentProfile.skills.all as categories %}
+    <h1>Hard skills</h1>
+    {% get_categories currentProfile.hard_skills.all as categories %}
     <div id="skills-list">
         {% for category in categories %}
             <div class="skill-category">
@@ -22,4 +21,8 @@
             </div>
         {% endfor %}
     </div>
+</section>
+<section id="soft-skills" class="content-block">
+    <h1>Soft skills</h1>
+    <p style="color:black;">{{currentProfile.soft_skills|safe}}</p>
 </section>

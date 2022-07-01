@@ -92,7 +92,7 @@ class ProfileAdmin(admin.ModelAdmin):
         'get_photo', 
         'firstname', 'lastname',
         'target_vacancy',
-        'get_skills',
+        'get_hard_skills',
         'get_work_experience',
         'get_contacts'
     ]
@@ -176,7 +176,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
         
         
-    def get_skills(self, obj):
+    def get_hard_skills(self, obj):
         html = """
             <style>
                 p {
@@ -190,7 +190,7 @@ class ProfileAdmin(admin.ModelAdmin):
             <div style="display:flex;flex-wrap:wrap;width:18em;justify-content:center;">
         """
         
-        for skill in obj.skills.all():
+        for skill in obj.hard_skills.all():
             if skill.icon and skill.icon.url:
                 html += f'<img src="{skill.icon.url}" style="margin:1em;width:4em;height:4em;">'
             else:
@@ -199,7 +199,7 @@ class ProfileAdmin(admin.ModelAdmin):
                 """
         html+= "</div>"
         return mark_safe(html)
-    get_skills.short_description = "Skills"
+    get_hard_skills.short_description = "Hard skills"
 
 
     def get_work_experience(self, obj):

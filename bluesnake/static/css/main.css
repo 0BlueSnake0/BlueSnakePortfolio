@@ -1,5 +1,6 @@
 body {
-    position:absolute;
+    position:relative;
+    display:block;
     overflow-x:hidden;
     width:100%;
     color: #6e7076;

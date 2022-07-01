@@ -3,6 +3,11 @@
     overflow:hidden;
 }
 
+#projects h1 {
+    text-align:center;
+}
+
+
 
 .project-description {
     font-family:"Comfortaa Light";

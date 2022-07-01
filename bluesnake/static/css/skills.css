@@ -1,15 +1,26 @@
-#skills {
+#hard-skills {
     margin-top:6vw;
     display::block;
-    text-align:center;
     overflow:hidden;
     background:rgba(153, 150, 253, 0.1);
     box-shadow: 1vw 1vw 5vw 0vw rgba(0,0,0,0.7);
 }
 
-#skills h2 {
-    font-weight:600;
+
+#hard-skills h2 {
+    text-align:center;
 }
+
+
+#hard-skills h1 {
+    text-align:center;
+}
+
+
+#soft-skills h1 {
+    text-align:center;
+}
+
 
 
 .skill-category {
@@ -86,7 +97,7 @@
 }
 
 
-#skills img[class="background-img"]  {
+#hard-skills img[class="background-img"]  {
     position:absolute;
     display:block;
     width:200vw;
