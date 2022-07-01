@@ -1,11 +1,30 @@
 {% load static %}
-<div class="hello-slide slideshow-item">
-    <ul>
-        <li><h1>Hi there!</h1></li>
-        <li>
-            <h2>I'm {{currentProfile.firstname}},</h2>
-            <h3>{{currentProfile.target_vacancy}}</h3>
-        </li> 
-        <li><h4>And I'm glad you're here! :)</h4></li> 
-    </ul> 
-</div> 
+<section id="greeting" class="content-block">
+    <div>
+        <div id="hello">
+            <h1 class="hello-title">
+            Hi there! I'm {{currentProfile.firstname}}, {{currentProfile.target_vacancy}}.
+            </h1>
+            <h1 class="hello-title">And I'm glad you're here!</h1>
+            <img class="background-img">
+        </div>
+    </div>
+    <div id="summary">{{currentProfile.summary|safe}}</div>
+    <div id="contact-apps">
+        {% if currentProfile.telegram %}
+            <a target="_blank" href="{{currentProfile.telegram}}">
+            <img class="contact-icon" src="{% static 'images/icons/telegram.png' %}">
+            </a>
+        {% endif %}
+        {% if currentProfile.github %}
+            <a target="_blank" href="{{currentProfile.github}}">
+            <img class="contact-icon" src="{% static 'images/icons/github.png' %}">
+            </a>
+        {% endif %}
+        {% if currentProfile.linkedIn %}
+            <a target="_blank" href="{{currentProfile.linkedIn}}">
+            <img class="contact-icon" src="{% static 'images/icons/linkedIn.png' %}">
+            </a>
+        {% endif %}
+    </div>
+</section>

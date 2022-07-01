@@ -1,68 +1,67 @@
-.hello-slide {    
+#greeting {
+    top:6vw;
+    margin-left:auto;
+    margin-right:auto;
+    background:rgba(153, 150, 253, 0.1);
+    animation:fading 4s;
+    overflow:hidden;
+    padding-bottom:15vw;
 }
 
 
-.hello-slide ul {
-    position:relative;overflow:hidden; 
-    border-radius: 3em;
-    width:90%;
-    height:100%;
-    margin-left:auto;margin-right:auto;
-}
-
-
-@keyframes hello-title {
-    from {opacity:0;transform: translateX(-50%);}
-    to {opacity:1;trasnform: translateX(0%);}
-}
-
-
-.hello-slide ul li {
-    list-style-type: none;
-    text-align:left;
+#hello {
+    position:relative;
     display:block;
-    width:100%;
+    width:70%;
+    z-index:1;
+    animation:fading-appearance 2s;
+}
+
+
+#summary {
+    position:relative;
+    display:block;
+    width:80%;
+    font-family: 'BrandonText Medium';
+    font-weight:800;
     word-wrap:break-word;
+    z-index:1;
+    margin-top:5vw;
+
+    animation:fading-appearance 2s;
 }
 
-.hello-slide h1 {
-    font-weight: 800;
-    font-size:6em;
-    color:white;
-    font-family: Roboto; 
-}
-
-
-.hello-slide h2 {
-    font-weight: 800;
-    font-size:3em;
-    color:white;
-    font-family: Roboto;   
+#summary p {
+    color:#373d63; 
 }
 
 
-.hello-slide h3 {
-    font-weight: thin;
-    font-size:2em;
-    color:rgb(143, 216, 125);
-    font-family: Courier New;
-    letter-spacing: 0.4em;
-    font-weight: bold;
-    cursor:pointer; 
-    text-transform: uppercase;
+#hello img[class="background-img"] {
+    position:absolute;
+    display:block;
+    width:300vw;
+    height:300vw;
+    top:0;
+
+    background-color:rgb(160, 130, 243);
+    transform: rotate(-45deg);
+    z-index:-1;
 }
 
-.hello-slide h3:hover { 
-    color:rgb(136, 253, 107);
+/* Mobile styles */
+@media screen and (max-width:1060px) {
+    #summary {
+        font-size:3vw;
+    }
+    .hello-title {
+        font-size:7vw;
+    }
 }
 
 
-.hello-slide h4 {
-    font-weight: 800;
-    font-size:2em;
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 0.1em;  
-    font-weight: bold;
-    cursor:pointer; 
+/* Desktop styles */
+@media screen and (min-width:1060px) {
+    #summary {
+        font-size:4vw;
+    }
 }

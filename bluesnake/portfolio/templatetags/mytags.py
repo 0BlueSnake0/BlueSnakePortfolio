@@ -21,3 +21,7 @@ def get_category_skills(categories, category):
 def get_projects(profile):
     return list(Project.objects.filter(profile=profile))
 
+
+@register.simple_tag
+def get_item_index(lst, item):
+    return list(lst).index(item);

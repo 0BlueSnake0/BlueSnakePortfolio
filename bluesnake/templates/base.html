@@ -2,25 +2,27 @@
 <html>
 {% load static %}
 <head>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}?v=1">
-    <link rel="stylesheet" href="{% static 'css/particle.css' %}?v=1">
+    <link rel="stylesheet" href="{% static 'css/animations.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/particle.css' %}?v=2">
 
     <script src="{% static 'js/jquery.min.js' %}"></script>
 </head>
 
 <body>
-    {% block slideshow %}{% endblock %}
+    {% block maincontent %}{% endblock %}
     {% block profile_not_found %}{% endblock %}
-
-    <div id="background"></div>
-    <script type="text/javascript" src="{% static 'js/generator.js' %}"></script>
+    {% block page_not_found %}{% endblock %}
+    <div id="particle-generator"></div>
+    <script type="text/javascript" src="{% static 'js/particle_generator.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/particle_settings.js' %}"></script>
     <script>
         function RandomInt(border1, border2) {return Math.floor(border1 + Math.random() * (border2 - border1));}
-        $("#background").css("height", $(document).height());
-        particleGenerator("background", particlesNumber*0.5, "particle", "blue");
-        particleGenerator("background", particlesNumber*0.3, "particle", "yellow");
-        particleGenerator("background", particlesNumber*0.2, "particle", "lime");
+        particleGenerator("particle-generator", 100, "particle", "cornflowerblue");
     </script>
     <script type="text/javascript" src="{% static 'js/particle_animation.js' %}"></script>
 

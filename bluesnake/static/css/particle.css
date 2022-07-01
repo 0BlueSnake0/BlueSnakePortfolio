@@ -1,55 +1,29 @@
-:root {  
-    --movement: 100vw; 
+:root {
+    --movement: 100vw;
 }
 
 
-@keyframes particleMoveLeft {
-    0% {opacity: 0.0;transform: translateX(0%);}
-    50% {opacity: 1.0;}
-    100% {transform: translateX(calc(-1*var(--movement)));opacity: 0.0;}
-}
-@keyframes particleMoveRight {
-    0% {opacity: 0.0;transform: translateX(0%);}
-    50% {opacity: 1.0;}
-    100% {transform: translateX(var(--movement));opacity: 0.0;} 
-}
-@keyframes particleMoveTop {
-    0% {opacity: 0.0;transform: translateX(0%);}
-    50% {opacity: 1.0;}
-    100% {transform: translateY(calc(-1*var(--movement)));opacity: 0.0;}  
-}
-@keyframes particleMoveBottom {
-    0% {opacity: 0.0;transform: translateX(0%);}
-    50% {opacity: 1.0;}
-    100% {transform: translateY(var(--movement));opacity: 0.0;}  
+#particle-generator {
+    position:fixed;
+    z-index:0;
+    height:100vh;
+    width:100vw;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:2;
 }
 
-@keyframes particleMoveLeftTop {
-    0% {opacity: 0.0;transform: translateX(0%);}
-    50% {opacity: 1.0;}
-    100% {transform: translateX(calc(-1*var(--movement))) translateY(calc(-1*var(--movement)));opacity: 0.0;}
-}
-@keyframes particleMoveRightTop {
-    0% {opacity: 0.0;transform: translateX(0%);}
-    50% {opacity: 1.0;}
-    100% {transform: translateX(var(--movement)) translateY(calc(-1*var(--movement)));opacity: 0.0;} 
-}
-@keyframes particleMoveLeftBottom {
-    0% {opacity: 0.0;transform: translateX(0%);}
-    50% {opacity: 1.0;}
-    100% {transform: translateX(calc(-1*var(--movement))) translateY(var(--movement));opacity: 0.0;}
-}
-@keyframes particleMoveRightBottom {
-    0% {opacity: 0.0;transform: translateX(0%);}
-    50% {opacity: 1.0;}
-    100% {transform: translateX(var(--movement)) translateY(var(--movement));opacity: 0.0;} 
-}
 
-.particle {   
+.particle {
+    position: absolute;
+    display:block;
+    overflow:hidden;
+    width:4px;
+    height:4px;
     animation-timing-function: linear;
     animation-iteration-count: infinite; 
-    animation-name: particleMoveLeft; 
-    position: absolute;
-    left:50%; 
-    z-index:-1;
+    animation-name: particleMoveTop;
+    transition:1s;
+    z-index:1;
 } 

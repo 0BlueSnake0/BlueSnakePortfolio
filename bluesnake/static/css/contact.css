@@ -1,33 +1,99 @@
-ul[class="contact-list"] {
+#contact  {
     position:relative;
-    margin:auto;
-    width:60%;
     display:block;
+    width:100%;
+    bottom:0;
+    box-shadow: 2vw 2vw 6vw 0vw rgba(0,0,0,0.8);
+    overflow:hidden;
+    z-index:3;
+
+    background-color:rgba(122, 72, 254, 1.0);
+}
+
+
+ul[class="contact-list"] {
+    left:8%;
 }
 
 
 ul[class="contact-list"] li {
     list-style-type:none;
-    margin:1em;
 }
+
 
 ul[class="contact-list"] li a {
-    padding:0.5em;
-    border-radius:1em;
+    position:relative;
     display:flex;
     align-items:center;
-    font-size:2em;
-    font-weight:bold;
-    color:#00CC66;
+    width:50%;
+    text-align:center;
 }
 
-ul[class="contact-list"] li a p {
-    margin:1em;
-}
 
 ul[class="contact-list"] li a:hover {
-    color:#00FF80;
-    transform:scale(1.05);
-    background-color: rgba(100, 149, 237, 0.1);
+    background-color:rgba(255,255,255, 0.25);
 }
 
+
+ul[class="contact-list"] li a p {
+    color:white;
+}
+
+
+#contact h1 {
+    font-family:"Comfortaa Bold";
+    width:50%;
+    color:white;
+}
+
+
+.contact-icon {
+    position:relative;
+    display:block;
+    margin:1vw;
+    z-index:2;
+}
+
+
+.contact-icon:hover {
+    opacity:0.75;
+    transform: scale(1.05);
+}
+
+
+#contact-apps {
+    position:absolute;
+    display:flex;
+    justify-content:right;
+    right:5vw;top:5vw;
+}
+
+
+/* Mobile styles */
+@media screen and (max-width:1060px) {
+    .contact-icon {
+        width:8vw;
+    }
+    #contact .contact-list .contact-icon {
+        width:6vw;
+    }
+    ul[class="contact-list"] li a {
+        font-size:2vw;
+        border-radius:2vw;
+    }
+}
+
+
+/* Desktop styles */
+@media screen and (min-width:1060px) {
+    .contact-icon {
+        width:4vw;
+    }
+    #contact .contact-list .contact-icon {
+        width:3vw;
+    }
+    ul[class="contact-list"] li a {
+        font-size:1vw;
+        border-radius:1vw;
+    }
+}

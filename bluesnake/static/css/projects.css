@@ -1,72 +1,73 @@
-.project {
-    margin:0.5em;
-    padding-left:2em;
-    padding-right:2em;
-    padding-bottom:2em; 
-    padding-top:1em;
-    width:25%;
-    height:auto;
-    border-radius: 0.75em;
-    background-color: rgba(100, 149, 237, 0.2);
-    display:flex;
-    flex-direction: column; 
-    justify-content:center;
+#projects {
+    width:100%;
+    overflow:hidden;
 }
 
-
-.project:hover {
-    background-color: rgba(100, 149, 237, 0.3);
-}
-
-
-
-.project h4 {
-    font-size:2vw;
-    color:black;
-    font-weight:800;
-    height:10%;
-}
-
-
-.project-preview {
-    width: 100%;
-    height:auto;
-    border-radius:1em;
-    position:relative;
-}
-
-
-.project-description {  
-    color:#535561;  
-    font-size:1em;
-    font-weight: 600;
+#projects h1 {
     text-align:center;
-    bottom:0;
+}
+
+
+.project-description {
+    font-family:"Comfortaa Light";
+    text-align:justify;
+    width:40%;
+    height:100%;
+    margin:2vw;
 }
 
 
 .github-link {
-    display:flex;
-    align-items:center;
-    padding-left:1em;padding-right:1em;
-    background-color: rgba(100, 149, 237, 0.2);
-    border-radius:2em;
-    width:auto;
     position:relative;
+    display:flex;
+    height:4vw;
+    align-items:center;
+    justify-content:center;
+    border-radius:4vw;
 }
 
 
-.github-link img:hover {
-    opacity:0.8;
+.github-link:hover {
+    opacity:0.5;
+    transform: scale(1.05);
+    background-color:rgba(122, 82, 231, 0.1);
 }
 
 
 .github-link h3 {
-    color:#534DA5;
-    margin:0.8em;
+    position:relative;
+    display:flex;
+    width:auto;
+    font-family:"Comfortaa";
+    font-weight:800;
+    color:blue; 
 }
 
 
-.github-link:hover h3 {
-    color:#9792E2;
+.github-link img {
+    width:4vw;
+    height:4vw;
+    border-radius:50%;
+}
+
+
+/* Mobile styles */
+@media screen and (max-width:1060px) {
+    .github-link {
+        width:50%;
+    }
+    .github-link h3 {
+        font-size:4vw;
+    }
+}
+
+
+/* Desktop styles */
+@media screen and (min-width:1060px) {
+    .github-link { 
+        width:100%;
+    }
+    .github-link {
+        font-size:2vw; 
+    }
 }

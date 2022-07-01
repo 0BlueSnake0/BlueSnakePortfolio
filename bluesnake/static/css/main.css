@@ -1,100 +1,89 @@
-body { 
-    background: #3c3f4f;  
-    position:relative;  
+body {
+    position:relative;
+    display:block;
     overflow-x:hidden;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    height:100vh;
- 
+    width:100%;
     color: #6e7076;
-    font-family: Roboto;
-  
+    font-family:"BrandonText Light";
+    z-index:10;
 }  
 
+
 body::-webkit-scrollbar-thumb {
-    background: #3e69e7;
+    background-color: rgba(255,255,255,0.8);
     border-radius: 2em;
 }
 
+
 body::-webkit-scrollbar-thumb:hover {
-    background: #8aa3f0; 
+    background-color: rgba(255,255,255,0.7);
 }
 
 
 body::-webkit-scrollbar {
-    background: #17181b;
-    width:1.5em;
+    background: #665F77;
+    width:2vw;
 }
-
-#background {
-    overflow:hidden;
-    position:absolute;  
-    left:0;
-    top:0; 
-    width:100vw; 
-    z-index:-1;
-}
-
-
-a {
-    text-decoration: none;
-}
-
 
 .content-block {
-    background-color: white;
-    font-family: Brandon Text,Roboto;
-    width:100%;height:100%;border-radius:2em;  
-    display:block;
-    position:absolute;
-}
-
-
-.content-block-title { 
-    color: #6962CD;
-    font-weight: 900; 
-    font-size:3em;
-    text-align:center;
-    white-space: nowrap; 
-} 
-
-
-.paragraph {
-    margin:2em;
-    font-size:1.5em;
-    color:gray;
-}
-
-.content-zone .content-block {overflow:scroll;}
-.content-zone .content-block::-webkit-scrollbar-thumb {
-    background: #AB7AD1;
-    border-radius: 2em;
-}
-
-.content-zone .content-block::-webkit-scrollbar-thumb:hover {
-    background: #B2A1E8;
-}
-
-
-.content-zone .content-block::-webkit-scrollbar {
-    background: transparent;
-    width:1.5em;
-}
-
-
-.flex-container {
-    display:flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin:2em;
-}
-
-
-.link-icon {
     position:relative;
-    width:3em;height:3em;
-    border-radius:50%;
+    display:block;
+    height:auto;
+    padding:2vw;
+    z-index:3;
+}
+
+
+a {text-decoration:none;}
+
+
+h1 {
+    position:relative;
+    display:block;
+    font-family:"BrandonText Medium";
+    font-weight:600;
+    color: #344058;
+}
+
+
+h2 {
+    position:relative;
+    display:block;
+    font-family:"BrandonText Medium";
+    font-weight:500;
+    color: #344058;
+}
+
+
+h3 {
+    position:relative;
+    display:block;
+    font-family:"BrandonText Light";
+    font-weight:800;
+    color: #344058;
+}
+
+
+p {
+    font-family:"Comfortaa Light";
+    font-weight:800;
+    color: gray;
+}
+
+
+/* Mobile styles */
+@media screen and (max-width:1060px) {
+    h1 {font-size:7vw;}
+    h2 {font-size:5vw; }
+    h3 {font-size:4vw;}
+    p {font-size:3vw;}
+}
+
+
+/* Desktop styles */
+@media screen and (min-width:1060px) {
+    h1 {font-size:3vw;}
+    h2 {font-size:2vw;}
+    h3 {font-size:1.5vw;}
+    p {font-size:1.125vw;}
 }

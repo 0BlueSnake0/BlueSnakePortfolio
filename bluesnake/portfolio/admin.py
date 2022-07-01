@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group, User
 from django.utils.safestring import mark_safe
-from .models import Image, Skill, SkillCategory, Profile, ActiveProfile, Project, WorkExpirience
+from .models import Skill, SkillCategory, Profile, ActiveProfile, Project, WorkExpirience
 
 
 admin.site.unregister(Group)
@@ -9,20 +9,6 @@ admin.site.unregister(User)
 admin.site.site_header = "Portfolio management"
 
 
-@admin.register(Image)
-class ImageAdmin(admin.ModelAdmin):
-    list_display = [
-        'get_image',
-        'title',
-        'file'
-    ]
-    
-    def get_image(self, obj):
-        html=f"""
-            <img src="{obj.file.url}" style="width:8em;height:8em;">
-        """
-        return mark_safe(html)
-    get_image.short_description=""
 
 
 @admin.register(SkillCategory)
@@ -49,9 +35,9 @@ class SkillCategoryAdmin(admin.ModelAdmin):
         """
         
         for skill in all_skills:
-            if skill.icon and skill.icon.file.url:
+            if skill.icon and skill.icon.url:
                 html += f"""
-                    <img src="{skill.icon.file.url}" style="margin:1em;width:4em;height:4em;"> 
+                    <img src="{skill.icon.url}" style="margin:1em;width:4em;height:4em;">
                 """
             else:
                 html += f"""
@@ -74,9 +60,9 @@ class SkillAdmin(admin.ModelAdmin):
         html = """
             <img src="/static/images/icons/skill-default.png" style="width:6em;height:6em;border-radius:50%;">
         """
-        if obj.icon:
+        if obj.icon and obj.icon.url:
                 html = f"""
-                <img src="{obj.icon.file.url}" style="width:6em;height:6em;border-radius:50%;">
+                <img src="{obj.icon.url}" style="width:6em;height:6em;border-radius:50%;">
             """
             
         return mark_safe(html)
@@ -106,7 +92,7 @@ class ProfileAdmin(admin.ModelAdmin):
         'get_photo', 
         'firstname', 'lastname',
         'target_vacancy',
-        'get_skills',
+        'get_hard_skills',
         'get_work_experience',
         'get_contacts'
     ]
@@ -190,7 +176,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
         
         
-    def get_skills(self, obj):
+    def get_hard_skills(self, obj):
         html = """
             <style>
                 p {
@@ -204,16 +190,16 @@ class ProfileAdmin(admin.ModelAdmin):
             <div style="display:flex;flex-wrap:wrap;width:18em;justify-content:center;">
         """
         
-        for skill in obj.skills.all():
-            if skill.icon and skill.icon.file.url:
-                html += f'<img src="{skill.icon.file.url}" style="margin:1em;width:4em;height:4em;">'
+        for skill in obj.hard_skills.all():
+            if skill.icon and skill.icon.url:
+                html += f'<img src="{skill.icon.url}" style="margin:1em;width:4em;height:4em;">'
             else:
                 html += f"""
                     <p>{skill.title}</p> 
                 """
         html+= "</div>"
         return mark_safe(html)
-    get_skills.short_description = "Skills"
+    get_hard_skills.short_description = "Hard skills"
 
 
     def get_work_experience(self, obj):
@@ -260,16 +246,15 @@ class ProjectAdmin(admin.ModelAdmin):
         'name',
         'get_github',
         'profile',
-        'have_slideshow'
     ]
 
     def get_preview(self, obj):
         html = """
-            <img src="/static/images/icons/project-default-preview.png" style="width:8em;height:8em;">
+            <img src="/static/images/icons/project-default-preview.png" style="width:25em;">
         """
         if obj.preview and obj.preview.url:
                 html = f"""
-                <img src="{obj.preview.url}" style="width:8em;height:8em;">
+                <img src="{obj.preview.url}" style="width:25em;">
             """
         return mark_safe(html)
     get_preview.short_description = "Preview"
@@ -283,17 +268,3 @@ class ProjectAdmin(admin.ModelAdmin):
         """
         return mark_safe(html)
     get_github.short_description = "GitHub"
-
-    
-    def have_slideshow(self, obj):
-        activity_image = "not-active.png"
-        if obj.slideshow:
-            activity_image = "active.png"
-
-        html = f"""
-            <img src="/static/images/icons/{activity_image}" style="width:3em;height:3em;border-radius:50%;">
-        """
-
-        return mark_safe(html)
-
-    have_slideshow.short_description = "Slideshow"

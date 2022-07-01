@@ -1,27 +1,10 @@
 {% load static %}
 {% load mytags %}
-<div class="slideshow-item">
-    <div class="content-block">
-        <h1 class="content-block-title">Projects</h1>
-        <div class="flex-container">
-            {% get_projects currentProfile as projects %}
-            {% for project in projects %}
-                <div class="project">
-                    <h4>{{project.name}}</h4>
-                    <div style="display:block;">
-                        {% if project.preview and project.preview.url %}
-                        <img class="project-preview" src="{{project.preview.url}}">
-                        {% endif %}
-                        <div>
-                            <a class="github-link" href="{{project.github}}" target="_blank">
-                                <img class="link-icon" src="{% static 'images/icons/github.png' %}">
-                                <h3 style="font-size:1.5vw;position:relative;">View github</h3>
-                            </a>
-                        </div>
-                        <p>{{project.description}}</p>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div> 
-</div>
+<section id="projects" class="content-block">
+    <h1>My projects</h1>
+    {% get_projects currentProfile as allprojects %}
+    {% with allprojects as projects %}
+        {% include 'slideshow.html' %}
+    {% endwith %}
+</section>
+

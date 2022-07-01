@@ -1,8 +1,8 @@
 from django.urls import path, include
-from .views import portfolioView
+from .views import portfolio, page_not_found
  
  
 app_name="portfolio"
 urlpatterns = [
-    path("", portfolioView, name='mainpage'),
+    path("", portfolio, name='mainpage'),
 ]

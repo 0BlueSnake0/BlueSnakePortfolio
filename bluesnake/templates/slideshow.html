@@ -1,0 +1,27 @@
+{% load static %}
+{% load mytags %}
+<div class="slideshow" id="projects-slideshow">
+    <div class="slides">
+        {% for project in projects %}
+            {% get_item_index projects project as slideIndex %}
+            <div id="projects-slideshow-slide-{{slideIndex}}" class="slide"> 
+                <img src="{{project.preview.url}}" class="slide-image"> 
+                <div class="project-description">
+                    <h2>{{project.name}}</h2>
+                    {{project.description|safe}}
+                    <a target="_blank" href="{{project.github}}" class="github-link">
+                        <h3>View on git</h3>
+                        <img class="contact-icon" src="{% static 'images/icons/github.png' %}">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <nav>
+        {% for project in projects %}
+            {% get_item_index projects project as slideIndex %}
+            <div id="projects-slideshow-dot-{{slideIndex}}" class="slideshow-dot" onclick='ActivateSlide("projects-slideshow", {{slideIndex}})'></div>
+        {% endfor %}
+    </nav>
+</div>
+<script type="text/javascript" src="{% static 'js/slideshow.js' %}?v=2"></script>

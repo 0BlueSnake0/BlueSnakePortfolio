@@ -5,7 +5,7 @@ from .models import ActiveProfile
 from django.core.exceptions import ObjectDoesNotExist
 
 
-def portfolioView(request, **kwargs):   
+def portfolio(request, **kwargs):
 
     try:
         currentProfile = ActiveProfile.objects.all()[:1].get().profile
@@ -30,3 +30,10 @@ def portfolioView(request, **kwargs):
             'currentProfile':currentProfile,
         }
     )
+
+
+def page_not_found(request, exception):
+    return render(
+        request,
+        template_name='page_not_found.html'
+        )
