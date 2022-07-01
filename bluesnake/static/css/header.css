@@ -35,6 +35,11 @@
 }
 
 
+#dropdown-menu #open:hover {
+    background:rgba(255,255,255,0.25);
+}
+
+
 #dropdown-menu #open div {
     width:70%;
     height:10%;
@@ -74,7 +79,12 @@
     margin-top:1vw;
     margin-left:1vw;
     margin-right:auto;
+    cursor:pointer;
     z-index:2;
+}
+
+#dropdown-menu #close:hover {
+    background:rgba(255,255,255,0.25);
 }
 
 

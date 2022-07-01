@@ -12,8 +12,9 @@
 .project-description {
     font-family:"Comfortaa Light";
     text-align:justify;
+    width:40%;
     height:100%;
-    padding:2vw;
+    margin:2vw;
 }
 
 
@@ -36,12 +37,11 @@
 
 .github-link h3 {
     position:relative;
-    display:block;
+    display:flex;
+    width:auto;
     font-family:"Comfortaa";
     font-weight:800;
-    color:blue;
-    margin-left:1vw;
-    margin-right:1vw;
+    color:blue; 
 }
 
 
@@ -54,17 +54,21 @@
 
 /* Mobile styles */
 @media screen and (max-width:1060px) {
+    .github-link {
+        width:50%;
+    }
     .github-link h3 {
         font-size:4vw;
-        width:50%;
     }
 }
 
 
 /* Desktop styles */
 @media screen and (min-width:1060px) {
-    .github-link h3 {
-        font-size:2vw;
+    .github-link { 
         width:100%;
+    }
+    .github-link {
+        font-size:2vw; 
     }
 }

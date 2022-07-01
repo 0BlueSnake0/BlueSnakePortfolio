@@ -14,6 +14,7 @@
     display:block;
     width:70%;
     z-index:1;
+    animation:fading-appearance 2s;
 }
 
 
@@ -27,8 +28,11 @@
     z-index:1;
     margin-top:5vw;
 
-    color:#B0AFCD;
     animation:fading-appearance 2s;
+}
+
+#summary p {
+    color:#373d63; 
 }
 
 
@@ -39,7 +43,7 @@
     height:300vw;
     top:0;
 
-    background-color:rgba(73, 15, 227, 1.0);
+    background-color:rgb(160, 130, 243);
     transform: rotate(-45deg);
     z-index:-1;
 }
