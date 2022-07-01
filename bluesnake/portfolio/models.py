@@ -7,7 +7,6 @@ from ckeditor.fields import RichTextField
 from phonenumber_field.modelfields import PhoneNumberField
 
 
-
 class SkillCategory(models.Model):
     title = models.CharField(default='', max_length=255)
 
