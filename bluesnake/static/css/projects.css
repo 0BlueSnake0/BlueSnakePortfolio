@@ -9,11 +9,13 @@
 
 
 .project-description {
+    position:relative;
+    display:block; 
     font-family:"Comfortaa Light";
-    text-align:justify;
-    width:40%;
+    text-align:justify; 
     height:100%;
     margin:2vw;
+    word-wrap:break-word; 
 }
 
 
@@ -58,6 +60,9 @@
     }
     .github-link h3 {
         font-size:4vw;
+    } 
+    .project-description  { 
+        width:60vw;
     }
 }
 
@@ -70,4 +75,7 @@
     .github-link {
         font-size:2vw; 
     }
+    .project-description  { 
+        width:40vw;
+    } 
 }
