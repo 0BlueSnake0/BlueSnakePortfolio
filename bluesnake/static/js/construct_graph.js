@@ -1,40 +1,43 @@
-function CheckIfCanSpawn(x, y, xCheck, yCheck)
+function Distance(x1, y1, x2, y2) { 
+    return Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1,2));
+}
+
+
+function CheckIfCanSpawn(x1, y1, x2, y2)
 {
-    var distance = Math.sqrt(Math.pow(xCheck-x, 2) + Math.pow(yCheck-y,2));
-    if (PixelsToPercents(distance,fieldWidth)  <= spawnZoneRadius) return false;
+    var distance = Distance(x1, y1, x2, y2);
+    if (PixelsToPercents(distance, fieldWidth) <= spawnZoneRadius) return false;
     return true;
 }
 
 
 function Spawn(nodeId, nodes)
 {
-    var x, y;
+    var x1, y1, x2, y2;
     var canSpawn=false;
     while (!canSpawn) {
-        x = PercentsToPixels(RandomInt(xRange[0], xRange[1]), fieldWidth);
-        y = PercentsToPixels(RandomInt(yRange[0], yRange[1]), fieldHeight);
+        x1 = PercentsToPixels(RandomInt(xRange[0], xRange[1]), fieldWidth);
+        y1 = PercentsToPixels(RandomInt(yRange[0], yRange[1]), fieldHeight);
         canSpawn=true;
         for (var node of nodes) {
-            if (nodeId != node.id && !CheckIfCanSpawn(
-            x, y,
-            PercentsToPixels(parseInt(node.style.left), fieldWidth),
-            PercentsToPixels(parseInt(node.style.top), fieldHeight))
-            ) {
+            x2 = PercentsToPixels(parseInt(node.style.left), fieldWidth);
+            y2 = PercentsToPixels(parseInt(node.style.top), fieldHeight);
+            if (nodeId != node.id && !CheckIfCanSpawn(x1, y1, x2, y2)) {
                 canSpawn=false;
                 break;
             }
-        }
-    }
-        $("#" + nodeId).css("left", PixelsToPercents(x, fieldWidth) + "%");
-        $("#" + nodeId).css("top",  PixelsToPercents(y, fieldHeight) + "%");
+        } 
+    } 
+    $("#" + nodeId).css("left", PixelsToPercents(x1, fieldWidth) + "%");
+    $("#" + nodeId).css("top",  PixelsToPercents(y1, fieldHeight) + "%");
 }
 
 var nodes = $("#graph-field .node");
 
 for (var node of nodes) {
-    connections[node.id] = {};
+    connections[node.id] = {};   
     Spawn(node.id, nodes);
-    node.style.animationName = "node-appear";
+    node.style.animationName = "node-grow";
     node.style.display = "flex";
 }
 

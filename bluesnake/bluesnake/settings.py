@@ -6,10 +6,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
  
 SECRET_KEY = config('SECRET_KEY') 
   
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'bluesnakeengineer.ru' 
+    'bluesnakeengineer.ru',
+    '127.0.0.1'
 ]
 
 

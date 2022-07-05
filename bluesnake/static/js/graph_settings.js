@@ -3,9 +3,9 @@ var connections = {};
 
 var fieldWidth=$("#graph-field").width(), fieldHeight=$("#graph-field").height();
 var middle= (fieldWidth + fieldHeight)/2;
-var nodeSize = $("#graph-field .node").width();
-var spawnZoneRadius=(16/$("#graph-field .node").length)*(nodeSize/ middle)*100;
-var borderOffsetPercentage=15;
+var nodeSize = 50;
+var spawnZoneRadius=20;
+var borderOffsetPercentage=15; 
 var xRange=[borderOffsetPercentage, nodeSpawnRight=100-borderOffsetPercentage];
 var yRange=[borderOffsetPercentage, nodeSpawnBottom=100-borderOffsetPercentage];
 
