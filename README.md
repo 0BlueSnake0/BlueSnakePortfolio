@@ -14,9 +14,15 @@ You can visit my website at https://bluesnakeengineer.ru to know more about me!
 ```
 git clone https://github.com/BlueSnakePortfolio
 ``` 
+# Install requirements 
+``` 
+cd BlueSnakePortfolio
+pip install -r requirements.txt
+```
+
 # Add SECRET_KEY environment variable to .env file 
 ```
-cd BlueSnakePortfolio/bluesnake/bluesnake
+cd ./bluesnake/bluesnake
 touch .env
 nano .env
 ``` 
