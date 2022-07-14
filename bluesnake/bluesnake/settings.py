@@ -9,8 +9,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'bluesnakeengineer.ru',
-    '127.0.0.1'
+    'bluesnakeengineer.ru' 
 ]
 
 
