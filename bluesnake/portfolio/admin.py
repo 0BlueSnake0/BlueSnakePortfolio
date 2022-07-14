@@ -58,11 +58,11 @@ class SkillAdmin(admin.ModelAdmin):
     ]
     def get_icon(self, obj):
         html = """
-            <img src="/static/images/icons/skill-default.png" style="width:6em;height:6em;border-radius:50%;">
+            <img src="/static/images/icons/skill-default.png" style="width:6em;height:6em;">
         """
         if obj.icon and obj.icon.url:
                 html = f"""
-                <img src="{obj.icon.url}" style="width:6em;height:6em;border-radius:50%;">
+                <img src="{obj.icon.url}" style="width:6em;height:6em;">
             """
             
         return mark_safe(html)

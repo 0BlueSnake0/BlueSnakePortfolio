@@ -7,7 +7,6 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from phonenumber_field.modelfields import PhoneNumberField
 
 
-
 class SkillCategory(models.Model):
     title = models.CharField(default='', max_length=255)
 
@@ -51,9 +50,14 @@ class Profile(models.Model):
 
     avatar = models.ImageField(default='', blank=True, upload_to='images/profile_photos/')
 
+<<<<<<< HEAD
     summary = RichTextUploadingField(default='', blank=True)
     hard_skills = models.ManyToManyField(Skill, blank=True)
     soft_skills = RichTextUploadingField(default='', blank=True)
+=======
+    summary = RichTextField(default='', blank=True)
+    hard_skills = models.ManyToManyField(Skill, blank=True) 
+>>>>>>> simpledesign
     expirience = models.ManyToManyField(WorkExpirience, blank=True)
 
     def __str__(self):
