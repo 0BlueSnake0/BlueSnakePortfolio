@@ -5,7 +5,8 @@ All you have to do is fill out some forms in the admin panel for your profile, a
 # Usage
 <div style="width:100%;display:flex;" align="center">
 <img style="width:60%;display:block;position:relative;" src="https://user-images.githubusercontent.com/70055801/178931917-f94e2cfe-a6ba-48c9-94d5-9104295b1c6d.png">
-<img style="width:30%;display:block;position:relative;margin:100px;" src="https://user-images.githubusercontent.com/70055801/178932620-3bf0a9be-6282-4da9-a3ed-756a8f1855b7.png"> 
+<img style="width:30%;display:block;position:relative;margin:100px;" src="https://user-images.githubusercontent.com/70055801/180618708-e7aec2cb-dbd4-4bf6-812c-6f469e95f026.png">   
+
 </div> 
 You can visit my website at https://bluesnakeengineer.ru to know more about me!
 
