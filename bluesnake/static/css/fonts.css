@@ -1,34 +1,34 @@
 @font-face {
     font-family:'BrandonText Bold';
-    src:url('/static/css/fonts/BrandonText-Bold.woff') format('woff');
+    src:url('./fonts/BrandonText-Bold.woff') format('woff');
 }
 
 
 @font-face {
     font-family:'BrandonText Medium';
-    src:url('/static/css/fonts/BrandonText-Medium.woff') format('woff');
+    src:url('./fonts/BrandonText-Medium.woff') format('woff');
 }
 
 
 @font-face {
     font-family:'BrandonText Light';
-    src:url('/static/css/fonts/BrandonText-Light.woff') format('woff');
+    src:url('./fonts/BrandonText-Light.woff') format('woff');
 }
 
 
 @font-face {
     font-family:'Comfortaa Bold';
-    src:url('/static/css/fonts/Comfortaa-Bold.woff') format('woff');
+    src:url('./fonts/Comfortaa-Bold.woff') format('woff');
 }
 
 
 @font-face {
     font-family:'Comfortaa';
-    src:url('/static/css/fonts/Comfortaa.woff') format('woff');
+    src:url('./fonts/Comfortaa.woff') format('woff');
 }
 
 
 @font-face {
     font-family:'Comfortaa Light';
-    src:url('/static/css/fonts/Comfortaa-Light.woff') format('woff');
+    src:url('./fonts/Comfortaa-Light.woff') format('woff');
 }
