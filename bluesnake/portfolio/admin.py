@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.conf import settings
 from django.contrib.auth.models import Group, User
 from django.utils.safestring import mark_safe
 from .models import Skill, SkillCategory, Profile, ActiveProfile, Project, WorkExpirience
@@ -57,15 +58,9 @@ class SkillAdmin(admin.ModelAdmin):
         'title',
     ]
     def get_icon(self, obj):
-        html = """
-            <img src="/static/images/icons/skill-default.png" style="width:6em;height:6em;">
-        """
-        if obj.icon and obj.icon.url:
-                html = f"""
-                <img src="{obj.icon.url}" style="width:6em;height:6em;">
-            """
-            
+        html = f'<img src="{obj.icon.url}" style="width:6em;height:6em;">'
         return mark_safe(html)
+
     get_icon.short_description = "Icon"
 
 
@@ -99,11 +94,11 @@ class ProfileAdmin(admin.ModelAdmin):
 
 
     def get_photo(self, obj):
-        html = """
-            <img src="/static/images/icons/default-profile.png" style="width:6em;height:6em;border-radius:50%;">
+        html = f"""
+            <img src="{settings.STATIC_URL}/images/icons/default-profile.png" style="width:6em;height:6em;border-radius:50%;">
         """
         if obj.avatar and obj.avatar.url:
-                html = f"""
+            html = f"""
                 <img src="{obj.avatar.url}" style="width:6em;height:6em;border-radius:50%;">
             """
             
@@ -146,19 +141,19 @@ class ProfileAdmin(admin.ModelAdmin):
         if obj.github:
             github = f"""
                 <a href="{obj.github}" target="_blank">
-                <img src="/static/images/icons/github.png" style="width:3em;height:3em;border-radius:50%;"> 
+                <img src="{settings.STATIC_URL}/images/icons/github.png" style="width:3em;height:3em;border-radius:50%;">
                 </a>
             """
         if obj.linkedIn:
             linkedIn = f""" 
                 <a href="{obj.linkedIn}" target="_blank" >
-                <img src="/static/images/icons/linkedIn.png" style="width:3em;height:3em;border-radius:50%;">
+                <img src="{settings.STATIC_URL}/images/icons/linkedIn.png" style="width:3em;height:3em;border-radius:50%;">
                 </a>
             """
         if obj.telegram:
             telegram = f"""   
                 <a href="{obj.telegram}" target="_blank">
-                <img src="/static/images/icons/telegram.png" style="width:3em;height:3em;border-radius:50%;"> 
+                <img src="{settings.STATIC_URL}/images/icons/telegram.png" style="width:3em;height:3em;border-radius:50%;">
                 </a>
             """
 
@@ -249,8 +244,8 @@ class ProjectAdmin(admin.ModelAdmin):
     ]
 
     def get_preview(self, obj):
-        html = """
-            <img src="/static/images/icons/project-default-preview.png" style="width:25em;">
+        html = f"""
+            <img src="{settings.STATIC_URL}/images/icons/project-default-preview.png" style="width:25em;">
         """
         if obj.preview and obj.preview.url:
                 html = f"""
@@ -263,7 +258,7 @@ class ProjectAdmin(admin.ModelAdmin):
     def get_github(self, obj):
         html = f"""
             <a href="{obj.github}" target="_blank">
-            <img src="/static/images/icons/github.png" style="width:3em;height:3em;border-radius:50%;"> 
+            <img src="{settings.STATIC_URL}/images/icons/github.png" style="width:3em;height:3em;border-radius:50%;">
             </a>
         """
         return mark_safe(html)
