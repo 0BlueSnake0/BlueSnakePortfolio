@@ -57,8 +57,8 @@ python3 manage.py createsuperuser
 ```
 Enter your username, password and email
 ```  
-Username (leave blank to use 'bluesnake'): 
-Email address: sulwird@gmail.com
+Username (leave blank to use 'user23523'): 
+Email address: user23523@gmail.com
 Password: 
 Password (again): 
 Superuser created successfully.
@@ -70,8 +70,9 @@ Superuser created successfully.
 python3 manage.py runserver --insecure
 ```
 
-# Go to 127.0.0.1:800/admin in your browser and login as admin
-![image](https://user-images.githubusercontent.com/70055801/178949561-1a52b71e-f556-40a2-b429-b34c9efdf75f.png)
+# Go to 127.0.0.1:800/admin in your browser and login as admin 
+![image](https://user-images.githubusercontent.com/70055801/180741849-98287c49-345a-4594-81e9-490d26b11a3b.png)
+
 # Now you can go to different sections in admin panel and create/edit your resume
 ![image](https://user-images.githubusercontent.com/70055801/178949742-502f3072-26eb-4d2e-bb11-41452af65fdd.png) 
 
